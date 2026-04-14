@@ -73,6 +73,16 @@ export default function RegisterPage() {
                 type="email"
               />
             </div>
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
+                NID Number
+              </label>
+              <input
+                className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
+                placeholder="1234567890"
+                type="text"
+              />
+            </div>
 
             {/* Password */}
             <div className="space-y-1.5">
