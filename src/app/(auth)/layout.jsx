@@ -8,8 +8,8 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "Login | Songjog Care",
-  description: "Sign in to your Songjog Care account.",
+  title: "Authentication | Songjog Care",
+  description: "Secure authentication for Songjog Care services.",
 };
 
 export default function AuthLayout({ children }) {

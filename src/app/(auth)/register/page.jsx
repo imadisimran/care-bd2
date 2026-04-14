@@ -1,8 +1,9 @@
 import Link from "next/link";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
-    <section className="flex-grow flex items-center justify-center pt-16 pb-12 px-6 relative overflow-hidden min-h-screen"
+    <section
+      className="flex-grow flex items-center justify-center pt-16 pb-12 px-6 relative overflow-hidden min-h-screen"
       style={{
         backgroundImage:
           "radial-gradient(circle at 10% 20%, rgba(75, 63, 114, 0.03) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(21, 55, 33, 0.03) 0%, transparent 40%)",
@@ -24,31 +25,43 @@ export default function LoginPage() {
       <div className="absolute bottom-1/4 -right-12 w-96 h-96 bg-tertiary-container/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-md relative">
-        {/* Secure Login Badge */}
+        {/* Secure Register Badge */}
         <div className="absolute -top-12 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-surface-container-highest/50 backdrop-blur-md px-4 py-1.5 rounded-full border border-outline-variant/10 shadow-sm whitespace-nowrap">
           <span
             className="material-symbols-outlined text-xs text-tertiary"
             style={{ fontVariationSettings: "'FILL' 1", fontSize: "14px" }}
           >
-            lock
+            how_to_reg
           </span>
           <span className="text-[10px] font-bold tracking-widest uppercase text-tertiary/80">
-            Secure Login
+            Secure Registration
           </span>
         </div>
 
-        {/* Login Card */}
+        {/* Register Card */}
         <div className="glass-card p-10 md:p-12 rounded-xl whisper-shadow border border-white/40">
           <div className="mb-10 text-center">
             <h1 className="text-3xl font-extrabold text-primary tracking-tight mb-2">
-              Welcome Back
+              Join Us
             </h1>
             <p className="text-on-surface-variant font-medium text-sm">
-              Access your sanctuary of personalized care.
+              Begin your journey of personalized care today.
             </p>
           </div>
 
           <form className="space-y-6">
+            {/* Full Name */}
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
+                Full Name
+              </label>
+              <input
+                className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
+                placeholder="John Doe"
+                type="text"
+              />
+            </div>
+
             {/* Email */}
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
@@ -63,17 +76,9 @@ export default function LoginPage() {
 
             {/* Password */}
             <div className="space-y-1.5">
-              <div className="flex justify-between items-center px-1">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60">
-                  Password
-                </label>
-                <a
-                  href="#"
-                  className="text-[10px] font-bold uppercase tracking-widest text-primary-container hover:text-primary transition-colors"
-                >
-                  Forgot Password?
-                </a>
-              </div>
+              <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
+                Password
+              </label>
               <input
                 className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
                 placeholder="••••••••"
@@ -85,7 +90,7 @@ export default function LoginPage() {
               className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4"
               type="submit"
             >
-              Sign In to Account
+              Create Account
             </button>
 
             {/* Divider */}
@@ -129,18 +134,18 @@ export default function LoginPage() {
 
           <div className="mt-10 pt-8 border-t border-outline-variant/10 text-center">
             <p className="text-sm text-on-surface-variant font-medium">
-              New to Songjog Care?{" "}
+              Already have an account?{" "}
               <Link
-                href="/register"
+                href="/login"
                 className="text-primary-container font-bold hover:underline decoration-2 underline-offset-4 ml-1"
               >
-                Create Account
+                Sign In
               </Link>
             </p>
           </div>
         </div>
 
-       
+        
       </div>
     </section>
   );
