@@ -31,9 +31,9 @@ export default function Navbar() {
           language
         </button>
         <div className="hidden sm:flex items-center gap-4">
-          <button className="text-sm font-bold text-primary uppercase tracking-wider px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors">
+          <Link href="/login" className="text-sm font-bold text-primary uppercase tracking-wider px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors">
             Sign In
-          </button>
+          </Link>
           <button className="bg-tertiary-container text-on-tertiary-container px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
             Book Care Now
           </button>
