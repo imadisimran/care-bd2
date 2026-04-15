@@ -1,8 +1,26 @@
+"use client";
+
+import AuthContext from "@/context/AuthContext";
 import Link from "next/link";
+import { use } from "react";
+import { useForm } from "react-hook-form";
 
 export default function LoginPage() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    // Simulate async login call — replace with real auth logic
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    console.log("Login data:", data);
+  };
+
   return (
-    <section className="flex-grow flex items-center justify-center pt-16 pb-12 px-6 relative overflow-hidden min-h-screen"
+    <section
+      className="flex-grow flex items-center justify-center pt-16 pb-12 px-6 relative overflow-hidden min-h-screen"
       style={{
         backgroundImage:
           "radial-gradient(circle at 10% 20%, rgba(75, 63, 114, 0.03) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(21, 55, 33, 0.03) 0%, transparent 40%)",
@@ -48,17 +66,36 @@ export default function LoginPage() {
             </p>
           </div>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit(onSubmit)} noValidate>
             {/* Email */}
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
                 Email Address
               </label>
               <input
-                className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
+                {...register("email", {
+                  required: "Email address is required.",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Please enter a valid email address.",
+                  },
+                })}
+                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  errors.email
+                    ? "border-error/60 focus:ring-error/20"
+                    : "border-outline-variant/20 focus:ring-primary/10"
+                }`}
                 placeholder="name@example.com"
                 type="email"
               />
+              {errors.email && (
+                <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
+                    error
+                  </span>
+                  {errors.email.message}
+                </p>
+              )}
             </div>
 
             {/* Password */}
@@ -75,17 +112,46 @@ export default function LoginPage() {
                 </a>
               </div>
               <input
-                className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
+                {...register("password", {
+                  required: "Password is required.",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters.",
+                  },
+                })}
+                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  errors.password
+                    ? "border-error/60 focus:ring-error/20"
+                    : "border-outline-variant/20 focus:ring-primary/10"
+                }`}
                 placeholder="••••••••"
                 type="password"
               />
+              {errors.password && (
+                <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
+                    error
+                  </span>
+                  {errors.password.message}
+                </p>
+              )}
             </div>
 
             <button
-              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4"
+              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none disabled:scale-100"
               type="submit"
+              disabled={isSubmitting}
             >
-              Sign In to Account
+              {isSubmitting ? (
+                <>
+                  <span className="material-symbols-outlined animate-spin" style={{ fontSize: "18px" }}>
+                    progress_activity
+                  </span>
+                  Signing In…
+                </>
+              ) : (
+                "Sign In to Account"
+              )}
             </button>
 
             {/* Divider */}
@@ -139,8 +205,6 @@ export default function LoginPage() {
             </p>
           </div>
         </div>
-
-       
       </div>
     </section>
   );

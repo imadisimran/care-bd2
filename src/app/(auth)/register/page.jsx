@@ -1,6 +1,82 @@
+"use client";
+
+import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useForm, useWatch } from "react-hook-form";
+import Swal from "sweetalert2";
 
 export default function RegisterPage() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    control
+  } = useForm();
+
+  const router = useRouter();
+
+  const password = useWatch({
+    control,
+    name: "password",
+    defaultValue:""
+  });
+
+  const {registerUser}=useAuth()
+
+  const handleRegistration = async (data) => {
+    try{
+      const result = await registerUser(data.email,data.password)
+
+      await Swal.fire({
+        title: "Welcome Aboard! 🎉",
+        html: `
+          <p style="color:#48454f;font-size:0.875rem;margin:0;">
+            Your account has been created successfully.<br/>
+            <strong style="color:#34285a">${data.name}</strong>, your journey of personalised care begins now.
+          </p>
+        `,
+        icon: "success",
+        confirmButtonText: "Ok",
+        background: "rgba(251,249,244,0.95)",
+        backdrop: `rgba(52,40,90,0.25) url("") left top no-repeat`,
+        color: "#1b1c19",
+        iconColor: "#153721",
+        confirmButtonColor: "#2c4e37",
+        customClass: {
+          popup:
+            "swal-care-popup",
+          title: "swal-care-title",
+          confirmButton: "swal-care-confirm",
+        },
+        showClass: {
+          popup: "swal__show",
+        },
+        hideClass: {
+          popup: "swal__hide",
+        },
+      });
+
+      router.push("/");
+    }catch(error){
+      Swal.fire({
+        title: "Registration Failed",
+        text: error?.message || "Something went wrong. Please try again.",
+        icon: "error",
+        confirmButtonText: "Try Again",
+        background: "rgba(251,249,244,0.95)",
+        color: "#1b1c19",
+        iconColor: "#ba1a1a",
+        confirmButtonColor: "#34285a",
+        customClass: {
+          popup: "swal-care-popup",
+          title: "swal-care-title",
+          confirmButton: "swal-care-confirm",
+        },
+      });
+    }
+  };
+
   return (
     <section
       className="flex-grow flex items-center justify-center pt-16 pb-12 px-6 relative overflow-hidden min-h-screen"
@@ -49,17 +125,36 @@ export default function RegisterPage() {
             </p>
           </div>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit(handleRegistration)} noValidate>
             {/* Full Name */}
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
                 Full Name
               </label>
               <input
-                className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
+                {...register("name", {
+                  required: "Full name is required.",
+                  minLength: {
+                    value: 2,
+                    message: "Name must be at least 2 characters.",
+                  },
+                })}
+                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  errors.name
+                    ? "border-error/60 focus:ring-error/20"
+                    : "border-outline-variant/20 focus:ring-primary/10"
+                }`}
                 placeholder="John Doe"
                 type="text"
               />
+              {errors.name && (
+                <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
+                    error
+                  </span>
+                  {errors.name.message}
+                </p>
+              )}
             </div>
 
             {/* Email */}
@@ -68,20 +163,60 @@ export default function RegisterPage() {
                 Email Address
               </label>
               <input
-                className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
+                {...register("email", {
+                  required: "Email address is required.",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Please enter a valid email address.",
+                  },
+                })}
+                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  errors.email
+                    ? "border-error/60 focus:ring-error/20"
+                    : "border-outline-variant/20 focus:ring-primary/10"
+                }`}
                 placeholder="name@example.com"
                 type="email"
               />
+              {errors.email && (
+                <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
+                    error
+                  </span>
+                  {errors.email.message}
+                </p>
+              )}
             </div>
+
+            {/* NID Number */}
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
                 NID Number
               </label>
               <input
-                className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
+                {...register("nid", {
+                  required: "NID number is required.",
+                  // pattern: {
+                  //   value: /^\d{10}(\d{7})?$/,
+                  //   message: "NID must be 10 or 17 digits.",
+                  // },
+                })}
+                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  errors.nid
+                    ? "border-error/60 focus:ring-error/20"
+                    : "border-outline-variant/20 focus:ring-primary/10"
+                }`}
                 placeholder="1234567890"
                 type="text"
               />
+              {errors.nid && (
+                <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
+                    error
+                  </span>
+                  {errors.nid.message}
+                </p>
+              )}
             </div>
 
             {/* Password */}
@@ -90,17 +225,75 @@ export default function RegisterPage() {
                 Password
               </label>
               <input
-                className="w-full bg-surface-container-low/40 border border-outline-variant/20 rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:bg-surface-container-lowest transition-all"
+                {...register("password", {
+                  required: "Password is required.",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters.",
+                  },
+                })}
+                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  errors.password
+                    ? "border-error/60 focus:ring-error/20"
+                    : "border-outline-variant/20 focus:ring-primary/10"
+                }`}
                 placeholder="••••••••"
                 type="password"
               />
+              {errors.password && (
+                <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
+                    error
+                  </span>
+                  {errors.password.message}
+                </p>
+              )}
+            </div>
+
+            {/* Confirm Password */}
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
+                Confirm Password
+              </label>
+              <input
+                {...register("confirmPassword", {
+                  required: "Please confirm your password.",
+                  validate: (value) =>
+                    value === password || "Passwords do not match.",
+                })}
+                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  errors.confirmPassword
+                    ? "border-error/60 focus:ring-error/20"
+                    : "border-outline-variant/20 focus:ring-primary/10"
+                }`}
+                placeholder="••••••••"
+                type="password"
+              />
+              {errors.confirmPassword && (
+                <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
+                  <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
+                    error
+                  </span>
+                  {errors.confirmPassword.message}
+                </p>
+              )}
             </div>
 
             <button
-              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4"
+              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none disabled:scale-100"
               type="submit"
+              disabled={isSubmitting}
             >
-              Create Account
+              {isSubmitting ? (
+                <>
+                  <span className="material-symbols-outlined animate-spin" style={{ fontSize: "18px" }}>
+                    progress_activity
+                  </span>
+                  Creating Account…
+                </>
+              ) : (
+                "Create Account"
+              )}
             </button>
 
             {/* Divider */}
@@ -154,8 +347,6 @@ export default function RegisterPage() {
             </p>
           </div>
         </div>
-
-        
       </div>
     </section>
   );
