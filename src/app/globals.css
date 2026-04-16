@@ -266,20 +266,3 @@
 .swal-care-confirm:active {
   transform: scale(0.97) !important;
 }
-
-/* enter / exit animations */
-.swal__show {
-  animation: swal-scale-in 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
-}
-.swal__hide {
-  animation: swal-scale-out 0.2s ease-in both !important;
-}
-
-@keyframes swal-scale-in {
-  from { opacity: 0; transform: scale(0.88) translateY(12px); }
-  to   { opacity: 1; transform: scale(1)    translateY(0);    }
-}
-@keyframes swal-scale-out {
-  from { opacity: 1; transform: scale(1); }
-  to   { opacity: 0; transform: scale(0.92); }
-}

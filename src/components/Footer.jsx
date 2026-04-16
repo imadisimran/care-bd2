@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 
 export default function Footer() {
   return (
@@ -6,7 +8,15 @@ export default function Footer() {
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-8">
-            <Link href="/" className="text-3xl font-bold tracking-tighter text-[#84A98C]">Songjog Care</Link>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Care BD"
+                width={160}
+                height={44}
+                className="h-10 w-auto object-contain"
+              />
+            </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Providing compassionate, professional caregiving services across Bangladesh. We blend medical excellence with personal compassion.
             </p>

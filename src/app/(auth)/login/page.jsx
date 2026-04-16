@@ -1,18 +1,18 @@
 "use client";
 
-import AuthContext from "@/context/AuthContext";
 import Link from "next/link";
-import { use } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const handleLogin = async (data) => {
     // Simulate async login call — replace with real auth logic
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log("Login data:", data);
@@ -66,7 +66,7 @@ export default function LoginPage() {
             </p>
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit(onSubmit)} noValidate>
+          <form className="space-y-6" onSubmit={handleSubmit(handleLogin)} noValidate>
             {/* Email */}
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
@@ -111,22 +111,33 @@ export default function LoginPage() {
                   Forgot Password?
                 </a>
               </div>
-              <input
-                {...register("password", {
-                  required: "Password is required.",
-                  minLength: {
-                    value: 6,
-                    message: "Password must be at least 6 characters.",
-                  },
-                })}
-                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
-                  errors.password
-                    ? "border-error/60 focus:ring-error/20"
-                    : "border-outline-variant/20 focus:ring-primary/10"
-                }`}
-                placeholder="••••••••"
-                type="password"
-              />
+              <div className="relative">
+                <input
+                  {...register("password", {
+                    required: "Password is required.",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters.",
+                    },
+                  })}
+                  className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 pr-12 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                    errors.password
+                      ? "border-error/60 focus:ring-error/20"
+                      : "border-outline-variant/20 focus:ring-primary/10"
+                  }`}
+                  placeholder="••••••••"
+                  type={showPassword ? "text" : "password"}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-1"
+                >
+                  <span className="material-symbols-outlined text-[20px]">
+                    {showPassword ? "visibility_off" : "visibility"}
+                  </span>
+                </button>
+              </div>
               {errors.password && (
                 <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
                   <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
@@ -138,7 +149,7 @@ export default function LoginPage() {
             </div>
 
             <button
-              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none disabled:scale-100"
+              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none disabled:scale-100 cursor-pointer"
               type="submit"
               disabled={isSubmitting}
             >

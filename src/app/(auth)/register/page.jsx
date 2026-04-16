@@ -1,12 +1,18 @@
 "use client";
 
 import useAuth from "@/hooks/useAuth";
+import { postUser } from "@/actions/server/auth";
+
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import Swal from "sweetalert2";
 
 export default function RegisterPage() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -22,17 +28,36 @@ export default function RegisterPage() {
     defaultValue:""
   });
 
-  const {registerUser}=useAuth()
+  const {registerUser,updateUser}=useAuth()
 
   const handleRegistration = async (data) => {
     try{
       const result = await registerUser(data.email,data.password)
+      const idToken=await result.user.getIdToken()
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+        },
+      });
+      const [updateUserResult,postUserResult]=await Promise.all([
+        updateUser(data.name),
+        postUser(data)
+      ]);
+
+      
+      if(response.ok && postUserResult.success){
+        router.refresh()
+        router.push("/")
+      }
+
+      console.log(result)
 
       await Swal.fire({
-        title: "Welcome Aboard! 🎉",
+        title: "Welcome! 🎉",
         html: `
           <p style="color:#48454f;font-size:0.875rem;margin:0;">
-            Your account has been created successfully.<br/>
+            ${postUserResult.message}<br/>
             <strong style="color:#34285a">${data.name}</strong>, your journey of personalised care begins now.
           </p>
         `,
@@ -48,12 +73,6 @@ export default function RegisterPage() {
             "swal-care-popup",
           title: "swal-care-title",
           confirmButton: "swal-care-confirm",
-        },
-        showClass: {
-          popup: "swal__show",
-        },
-        hideClass: {
-          popup: "swal__hide",
         },
       });
 
@@ -224,22 +243,33 @@ export default function RegisterPage() {
               <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
                 Password
               </label>
-              <input
-                {...register("password", {
-                  required: "Password is required.",
-                  minLength: {
-                    value: 6,
-                    message: "Password must be at least 6 characters.",
-                  },
-                })}
-                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
-                  errors.password
-                    ? "border-error/60 focus:ring-error/20"
-                    : "border-outline-variant/20 focus:ring-primary/10"
-                }`}
-                placeholder="••••••••"
-                type="password"
-              />
+              <div className="relative">
+                <input
+                  {...register("password", {
+                    required: "Password is required.",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters.",
+                    },
+                  })}
+                  className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 pr-12 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                    errors.password
+                      ? "border-error/60 focus:ring-error/20"
+                      : "border-outline-variant/20 focus:ring-primary/10"
+                  }`}
+                  placeholder="••••••••"
+                  type={showPassword ? "text" : "password"}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-1"
+                >
+                  <span className="material-symbols-outlined text-[20px]">
+                    {showPassword ? "visibility_off" : "visibility"}
+                  </span>
+                </button>
+              </div>
               {errors.password && (
                 <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
                   <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
@@ -255,20 +285,31 @@ export default function RegisterPage() {
               <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 px-1">
                 Confirm Password
               </label>
-              <input
-                {...register("confirmPassword", {
-                  required: "Please confirm your password.",
-                  validate: (value) =>
-                    value === password || "Passwords do not match.",
-                })}
-                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
-                  errors.confirmPassword
-                    ? "border-error/60 focus:ring-error/20"
-                    : "border-outline-variant/20 focus:ring-primary/10"
-                }`}
-                placeholder="••••••••"
-                type="password"
-              />
+              <div className="relative">
+                <input
+                  {...register("confirmPassword", {
+                    required: "Please confirm your password.",
+                    validate: (value) =>
+                      value === password || "Passwords do not match.",
+                  })}
+                  className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 pr-12 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                    errors.confirmPassword
+                      ? "border-error/60 focus:ring-error/20"
+                      : "border-outline-variant/20 focus:ring-primary/10"
+                  }`}
+                  placeholder="••••••••"
+                  type={showConfirmPassword ? "text" : "password"}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-1"
+                >
+                  <span className="material-symbols-outlined text-[20px]">
+                    {showConfirmPassword ? "visibility_off" : "visibility"}
+                  </span>
+                </button>
+              </div>
               {errors.confirmPassword && (
                 <p className="text-[11px] text-error font-medium px-1 mt-1 flex items-center gap-1">
                   <span className="material-symbols-outlined" style={{ fontSize: "13px" }}>
@@ -280,7 +321,7 @@ export default function RegisterPage() {
             </div>
 
             <button
-              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none disabled:scale-100"
+              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none disabled:scale-100 cursor-pointer"
               type="submit"
               disabled={isSubmitting}
             >

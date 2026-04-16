@@ -1,7 +1,7 @@
 "use client"
 import AuthContext from '@/context/AuthContext'
 import { auth } from '@/lib/firebase'
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
 
 export default function AuthProvider({children}) {
@@ -17,6 +17,16 @@ export default function AuthProvider({children}) {
             setLoading(false)
         })
     }
+    const updateUser=(name)=>{
+        return updateProfile(auth.currentUser,{displayName:name}).finally(()=>{
+            setLoading(false)
+        })
+    }
+    const logOut=()=>{
+        return signOut(auth).finally(()=>{
+            setLoading(false)
+        })
+    }
     useEffect(()=>{
         const unsubscribe=onAuthStateChanged(auth,(currentUser)=>{
             setUser(currentUser)
@@ -28,7 +38,9 @@ export default function AuthProvider({children}) {
         registerUser,
         user,
         loading,
-        signIn
+        signIn,
+        updateUser,
+        logOut
     }
   return (
     <AuthContext value={authInfo}>
