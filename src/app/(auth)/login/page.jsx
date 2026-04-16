@@ -1,8 +1,11 @@
 "use client";
 
+import useAuth from "@/hooks/useAuth";
+import { showErrorAlert, showSuccessAlert } from "@/lib/alert";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,11 +15,26 @@ export default function LoginPage() {
     formState: { errors, isSubmitting },
   } = useForm();
 
+  const {signIn}=useAuth()
+
   const handleLogin = async (data) => {
-    // Simulate async login call — replace with real auth logic
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Login data:", data);
-  };
+    try{
+      const result = await signIn(data.email,data.password)
+      const idToken=await result.user.getIdToken()
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+        },
+      });
+      if(response.ok){
+        showSuccessAlert({title:"Login Successful",text:"Welcome back!"})
+      }
+    }catch(error){
+      console.log(error)
+      showErrorAlert({title:"Login Failed",text:error.message})
+  }
+}
 
   return (
     <section

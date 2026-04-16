@@ -8,7 +8,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
-import Swal from "sweetalert2";
+import { showErrorAlert, showSuccessAlert } from "@/lib/alert";
+
 
 export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -53,7 +54,7 @@ export default function RegisterPage() {
 
       console.log(result)
 
-      await Swal.fire({
+      await showSuccessAlert({
         title: "Welcome! 🎉",
         html: `
           <p style="color:#48454f;font-size:0.875rem;margin:0;">
@@ -61,37 +62,14 @@ export default function RegisterPage() {
             <strong style="color:#34285a">${data.name}</strong>, your journey of personalised care begins now.
           </p>
         `,
-        icon: "success",
         confirmButtonText: "Ok",
-        background: "rgba(251,249,244,0.95)",
-        backdrop: `rgba(52,40,90,0.25) url("") left top no-repeat`,
-        color: "#1b1c19",
-        iconColor: "#153721",
-        confirmButtonColor: "#2c4e37",
-        customClass: {
-          popup:
-            "swal-care-popup",
-          title: "swal-care-title",
-          confirmButton: "swal-care-confirm",
-        },
       });
 
       router.push("/");
     }catch(error){
-      Swal.fire({
+      showErrorAlert({
         title: "Registration Failed",
         text: error?.message || "Something went wrong. Please try again.",
-        icon: "error",
-        confirmButtonText: "Try Again",
-        background: "rgba(251,249,244,0.95)",
-        color: "#1b1c19",
-        iconColor: "#ba1a1a",
-        confirmButtonColor: "#34285a",
-        customClass: {
-          popup: "swal-care-popup",
-          title: "swal-care-title",
-          confirmButton: "swal-care-confirm",
-        },
       });
     }
   };

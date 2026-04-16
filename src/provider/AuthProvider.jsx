@@ -1,7 +1,7 @@
 "use client"
 import AuthContext from '@/context/AuthContext'
 import { auth } from '@/lib/firebase'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
 
 export default function AuthProvider({children}) {
