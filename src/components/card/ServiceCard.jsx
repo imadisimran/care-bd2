@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ServiceCard({ service }) {
   const { title, desc, description, image, tag1, tag2, tags } = service;
 
@@ -66,9 +68,18 @@ export default function ServiceCard({ service }) {
             </span>{" "}
             Book Now
           </button>
-          <button className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all">
-            Details
-          </button>
+          {service.slug ? (
+            <Link
+              href={`/services/${service.slug}`}
+              className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all flex items-center justify-center"
+            >
+              Details
+            </Link>
+          ) : (
+            <button className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all">
+              Details
+            </button>
+          )}
         </div>
       </div>
     </div>
