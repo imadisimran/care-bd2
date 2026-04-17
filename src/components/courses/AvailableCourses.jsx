@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AvailableCourses() {
   return (
     <section>
@@ -35,7 +37,7 @@ export default function AvailableCourses() {
         {/* Course Card 1 */}
         <div className="glass-card rounded-2xl overflow-hidden whisper-shadow transition-transform hover:-translate-y-1">
           <div className="relative h-56">
-            <img alt="General Caregiving" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTNbkjRl9Ge_q67-YYDTlDfIrGpSM_BnH5P_S8cfintTt-_2UiS45brikXUvkNGc20XDiNqjAo9mJwYS-pwpsCHPLZTYTfwTSgbr9srqs2FumWmF7zKSaaLo72Ax8de06NuRKegkPLpHExAfv5tYxwzsVfhgMDGT7WEzMfhLgU-KdRSVGWQuZGjKLNZOpzZhg7oo9-vGxPFu4xZnhSO_fS8354vsCCBADV5xPqEJCpv0nnglecaC8XZGPKvNGmp9O-5yqiJXZrLqE"/>
+            <Image alt="General Caregiving" className="object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTNbkjRl9Ge_q67-YYDTlDfIrGpSM_BnH5P_S8cfintTt-_2UiS45brikXUvkNGc20XDiNqjAo9mJwYS-pwpsCHPLZTYTfwTSgbr9srqs2FumWmF7zKSaaLo72Ax8de06NuRKegkPLpHExAfv5tYxwzsVfhgMDGT7WEzMfhLgU-KdRSVGWQuZGjKLNZOpzZhg7oo9-vGxPFu4xZnhSO_fS8354vsCCBADV5xPqEJCpv0nnglecaC8XZGPKvNGmp9O-5yqiJXZrLqE" fill sizes="(max-width: 768px) 100vw, 50vw" />
             <div className="absolute top-4 left-4 flex gap-2">
               <span className="bg-orange-500/90 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Paid</span>
               <span className="bg-cyan-500/90 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">NSDA</span>
@@ -78,7 +80,7 @@ export default function AvailableCourses() {
         {/* Course Card 2 */}
         <div className="glass-card rounded-2xl overflow-hidden whisper-shadow transition-transform hover:-translate-y-1">
           <div className="relative h-56">
-            <img alt="Hatekolome Caregiving" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVWRAkGop-4-6L3bTx0fh6heCDiJQp1URuPU8SdcK7zneoFCNKv4ADv_pj4WhOb1xZlhQyOqW6U1ybwszRl_0UsSn3khsBe6tj7J6QuH5wJHA1HTp4lztd8dvwGZOkNdORabEsGVzTuWzItkThR_l7vKvUxyjLaqIkTXtR8wLJbgCes2I_4G5UhAB4kwTvT9vtZ_WxAIh1vjGRoU98M9YIJuHsCZ27xzw-oDLdlIRvXS9VoyCLFPSQnY7KZd_-EjrRV2Tt2X26MUk"/>
+            <Image alt="Hatekolome Caregiving" className="object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVWRAkGop-4-6L3bTx0fh6heCDiJQp1URuPU8SdcK7zneoFCNKv4ADv_pj4WhOb1xZlhQyOqW6U1ybwszRl_0UsSn3khsBe6tj7J6QuH5wJHA1HTp4lztd8dvwGZOkNdORabEsGVzTuWzItkThR_l7vKvUxyjLaqIkTXtR8wLJbgCes2I_4G5UhAB4kwTvT9vtZ_WxAIh1vjGRoU98M9YIJuHsCZ27xzw-oDLdlIRvXS9VoyCLFPSQnY7KZd_-EjrRV2Tt2X26MUk" fill sizes="(max-width: 768px) 100vw, 50vw"/>
             <div className="absolute top-4 left-4 flex gap-2">
               <span className="bg-yellow-500/90 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Free</span>
               <span className="bg-cyan-500/90 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">NSDA</span>

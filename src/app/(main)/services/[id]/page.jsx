@@ -28,6 +28,8 @@ export default async function ServiceDetailPage({ params }) {
 
   return (
     <div className="pt-12 pb-20 max-w-7xl mx-auto px-6 lg:px-12">
+
+      {/* Service Hero Section */}
       <ServiceHero
         title={service.title}
         desc={service.heroDesc}

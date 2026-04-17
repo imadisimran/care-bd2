@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /**
  * Pricing and CTA bar shown below the hero image.
  * Accepts priceFrom, pricePer, rating, and an array of features.
@@ -14,7 +16,7 @@ export default function ServicePricingBar({ price, pricePer, rating }) {
                 Starting from
               </span>
               <h2 className="text-5xl font-bold text-primary">
-                {price}
+                ${price}
                 <span className="text-xl text-on-surface-variant font-medium">
                   /{pricePer}
                 </span>
@@ -34,12 +36,12 @@ export default function ServicePricingBar({ price, pricePer, rating }) {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-            <button className="px-10 py-4 bg-tertiary-container text-on-tertiary-container rounded-full font-bold hover:scale-[1.05] transition-transform">
+            <Link href="/booking" className="px-10 py-4 bg-tertiary-container text-on-tertiary-container rounded-full font-bold hover:scale-[1.05] transition-transform">
               Book Now
-            </button>
-            <button className="px-10 py-4 border border-outline-variant text-primary rounded-full font-bold hover:bg-surface-container-low transition-colors">
+            </Link>
+            <Link href="/contact" className="px-10 py-4 border border-outline-variant text-primary rounded-full font-bold hover:bg-surface-container-low transition-colors">
               Contact team
-            </button>
+            </Link>
           </div>
         </div>
       </div>

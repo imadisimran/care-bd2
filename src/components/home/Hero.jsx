@@ -1,22 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center px-8 lg:px-16 overflow-hidden min-h-[75vh] py-section">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 opacity-20 mix-blend-luminosity grayscale">
-          <img 
+          <Image 
             alt="Professional caregivers" 
-            className="w-full h-full object-cover" 
+            className="object-cover" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDusapo_WGkeZ7txw9VjWQCdxO_q0tOPRac2kha_fbQ4ZkXjaAYFVLLcKkF99eGl_lG0o1pbTE9f_OpJPm1pbyS9Ep9r7MYFSz3x_7Ub4nYxAcodua1oVWMseiunsTLdRmpErZ0CGz147xPcXgG6NFRdKVwOmSmbN9IZZeh4pcbvAlhjhfUC3hti0v79TggfuRR9kl_q-6YzifQUEkKXiI8L1EXG9-Rt0p1zzZqocOYdPTsbfk372xI94y4yKnDM9nSTR0rdlO6pE0"
+            fill
+            sizes="100vw"
+            priority
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/60 to-surface/90"></div>
         <div className="absolute -right-20 bottom-10 w-96 opacity-15 rotate-12 pointer-events-none hidden lg:block">
-          <img 
+          <Image 
             alt="App mockup" 
             className="w-full h-auto rounded-[3rem] shadow-2xl border-[12px] border-on-surface" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXBfl0G02rCCVtXvED6jev5rjBdsfNyRUVsQxH67bNLPbhYHUulhE4LyUMYhW5motuydc_T7YWWCQt73Hq83PaiYFCsVoQTxPfGFcqkcd6uel4KnsM1yjc2i2t2ILzbyawcZCG9-ayv5R6JCrW4xY7XbpdyjHlBluq8ecCK3il49rjcs3SvRLa-ambN2HawETfxjCKgSk31xaOyHg5YGAWx4u7fai7vZjIJfRdV1K8JeVd659Z4v8iQtYzA0JtgOBaAgKTJGhVcbNeE"
+            width={400}
+            height={800}
           />
         </div>
         

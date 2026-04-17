@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ContactEmergency() {
   return (
     <section>
@@ -20,7 +22,7 @@ export default function ContactEmergency() {
         </div>
         {/* Abstract BG Pattern */}
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-          <img className="w-full h-full object-cover mix-blend-overlay" alt="abstract architectural lines and patterns in a monochromatic red wash creating a sense of urgency and medical structure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD762_ZoNPRjARxrWNa2tdyBwMc2ayI8kHfTuni7dfn3SowlkMGbVPzs7datsNIeARZ4S3Kh19e36HEoL4hUDBAUgIQJxkZ-wVSJMYBg-CMSob0AIvFIhpJoM2RYT7wkCuGwYauO2yOATxhIHSZ5nOcavOkIqg961y97WV8TrD1UXYIZz07z-awKS_cOxwcn5MpRRXziHSc8rDB3j8g-kjLlyYSAMDMDZmeHAAtTO7IZp5gm2igBxcfiPJcZUKCSDoZBE-GjeEcfJY"/>
+          <Image className="object-cover mix-blend-overlay" alt="abstract architectural lines and patterns in a monochromatic red wash creating a sense of urgency and medical structure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD762_ZoNPRjARxrWNa2tdyBwMc2ayI8kHfTuni7dfn3SowlkMGbVPzs7datsNIeARZ4S3Kh19e36HEoL4hUDBAUgIQJxkZ-wVSJMYBg-CMSob0AIvFIhpJoM2RYT7wkCuGwYauO2yOATxhIHSZ5nOcavOkIqg961y97WV8TrD1UXYIZz07z-awKS_cOxwcn5MpRRXziHSc8rDB3j8g-kjLlyYSAMDMDZmeHAAtTO7IZp5gm2igBxcfiPJcZUKCSDoZBE-GjeEcfJY" fill sizes="50vw"/>
         </div>
       </div>
     </section>

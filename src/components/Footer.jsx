@@ -32,14 +32,14 @@ export default function Footer() {
             </div>
             
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#84A98C] transition-colors">
-                <img alt="Facebook" className="w-5 h-5 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGdHXPZYqUStjiT2Y2rkQJ4a19-V6CXlKXEyII_ekkLFM8cTfaiyXG2_qYf42_Tr5ZKrAykWva7yDInJ6yB06W1R_WHoXfJTxnjWU6oLIFgrMumxethKFDFX_k5Ie_GTs3pH6N14eSpcDOIYkSLqvpHo6zwGX4AAwQ-GY1nhOhQnWGqJFXi5KGdwRe3EkCGaIyL2A2pRCH_TSEHWBXRrvyvHc1jSe7hlHHAUHofOTKE_c8zcEI2SBBxTC8keoByGU6-s1BHMUWivc"/>
+              <a href="#" className="w-10 h-10 relative rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#84A98C] transition-colors">
+                <Image alt="Facebook" className="opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGdHXPZYqUStjiT2Y2rkQJ4a19-V6CXlKXEyII_ekkLFM8cTfaiyXG2_qYf42_Tr5ZKrAykWva7yDInJ6yB06W1R_WHoXfJTxnjWU6oLIFgrMumxethKFDFX_k5Ie_GTs3pH6N14eSpcDOIYkSLqvpHo6zwGX4AAwQ-GY1nhOhQnWGqJFXi5KGdwRe3EkCGaIyL2A2pRCH_TSEHWBXRrvyvHc1jSe7hlHHAUHofOTKE_c8zcEI2SBBxTC8keoByGU6-s1BHMUWivc" width={20} height={20}/>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#84A98C] transition-colors">
-                <img alt="Twitter" className="w-5 h-5 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_wADXHCjmtZji-4Zusd56XSqcIBe46g_FhnMZv1NSzo3mmzLohKfYDTMTcsgYgyy7xskHmXWdiImzPApV-f1xsd1JGtQRJPq75aj0lgeEyX3VcNrVxv98k1A45zZQoG8cuzFbkCL-x2nThk0SkBbrmaIe7ksCHqar7ZkUQvEDIrddnuWP1hc7vmdEbpp2R0Hmvuyjz-chOWMRl4ptgFAtCQS04IKLQknTu5w6QeWuLXXPBE5D6uo1lveEmeBZ0IsbfMTq0L6GXkA"/>
+              <a href="#" className="w-10 h-10 relative rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#84A98C] transition-colors">
+                <Image alt="Twitter" className="opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_wADXHCjmtZji-4Zusd56XSqcIBe46g_FhnMZv1NSzo3mmzLohKfYDTMTcsgYgyy7xskHmXWdiImzPApV-f1xsd1JGtQRJPq75aj0lgeEyX3VcNrVxv98k1A45zZQoG8cuzFbkCL-x2nThk0SkBbrmaIe7ksCHqar7ZkUQvEDIrddnuWP1hc7vmdEbpp2R0Hmvuyjz-chOWMRl4ptgFAtCQS04IKLQknTu5w6QeWuLXXPBE5D6uo1lveEmeBZ0IsbfMTq0L6GXkA" width={20} height={20}/>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#84A98C] transition-colors">
-                <img alt="LinkedIn" className="w-5 h-5 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiUQ3HKpipAWZzLOX9aSB5DMCFFoCuVIuRU2LUpzH_83ItVT-f9lTCQxANO0SHNs74fH1hfjh4zfsia4epa7fAZ_VwO2mBA1xruPAN_xIwN2zp8tCmjUYEYvDPKgqaEowVSusd9JG0grx6nGk5q5TQ2XyniVUv9HDJDWxNpc3Z-7J9l0phxbD7m28sxm07CxokjpQXBm57EkWr7EQZCTb2v0dj6Skme-irk1Pnj7rZ9WbL1iQbLP15HT4_OVEycJxfrryOD0spenY"/>
+              <a href="#" className="w-10 h-10 relative rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#84A98C] transition-colors">
+                <Image alt="LinkedIn" className="opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiUQ3HKpipAWZzLOX9aSB5DMCFFoCuVIuRU2LUpzH_83ItVT-f9lTCQxANO0SHNs74fH1hfjh4zfsia4epa7fAZ_VwO2mBA1xruPAN_xIwN2zp8tCmjUYEYvDPKgqaEowVSusd9JG0grx6nGk5q5TQ2XyniVUv9HDJDWxNpc3Z-7J9l0phxbD7m28sxm07CxokjpQXBm57EkWr7EQZCTb2v0dj6Skme-irk1Pnj7rZ9WbL1iQbLP15HT4_OVEycJxfrryOD0spenY" width={20} height={20}/>
               </a>
             </div>
           </div>

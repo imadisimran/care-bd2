@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 export default function FeaturedCourses() {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-12">
       {/* Course 1 */}
       <div className="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-lowest hover:whisper-shadow">
         <div className="relative h-64 overflow-hidden">
-          <img alt="Geriatric Care Training" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTNbkjRl9Ge_q67-YYDTlDfIrGpSM_BnH5P_S8cfintTt-_2UiS45brikXUvkNGc20XDiNqjAo9mJwYS-pwpsCHPLZTYTfwTSgbr9srqs2FumWmF7zKSaaLo72Ax8de06NuRKegkPLpHExAfv5tYxwzsVfhgMDGT7WEzMfhLgU-KdRSVGWQuZGjKLNZOpzZhg7oo9-vGxPFu4xZnhSO_fS8354vsCCBADV5xPqEJCpv0nnglecaC8XZGPKvNGmp9O-5yqiJXZrLqE"/>
+          <Image alt="Geriatric Care Training" className="object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTNbkjRl9Ge_q67-YYDTlDfIrGpSM_BnH5P_S8cfintTt-_2UiS45brikXUvkNGc20XDiNqjAo9mJwYS-pwpsCHPLZTYTfwTSgbr9srqs2FumWmF7zKSaaLo72Ax8de06NuRKegkPLpHExAfv5tYxwzsVfhgMDGT7WEzMfhLgU-KdRSVGWQuZGjKLNZOpzZhg7oo9-vGxPFu4xZnhSO_fS8354vsCCBADV5xPqEJCpv0nnglecaC8XZGPKvNGmp9O-5yqiJXZrLqE" fill sizes="(max-width: 1024px) 100vw, 50vw"/>
           <div className="absolute top-4 left-4 bg-tertiary-container/90 backdrop-blur-md text-on-tertiary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">NSDA Certified</div>
         </div>
         <div className="p-8 flex-grow">
@@ -30,7 +32,7 @@ export default function FeaturedCourses() {
       {/* Course 2 */}
       <div className="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container-lowest hover:whisper-shadow">
         <div className="relative h-64 overflow-hidden">
-          <img alt="Practical Nursing Basics" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVWRAkGop-4-6L3bTx0fh6heCDiJQp1URuPU8SdcK7zneoFCNKv4ADv_pj4WhOb1xZlhQyOqW6U1ybwszRl_0UsSn3khsBe6tj7J6QuH5wJHA1HTp4lztd8dvwGZOkNdORabEsGVzTuWzItkThR_l7vKvUxyjLaqIkTXtR8wLJbgCes2I_4G5UhAB4kwTvT9vtZ_WxAIh1vjGRoU98M9YIJuHsCZ27xzw-oDLdlIRvXS9VoyCLFPSQnY7KZd_-EjrRV2Tt2X26MUk"/>
+          <Image alt="Practical Nursing Basics" className="object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVWRAkGop-4-6L3bTx0fh6heCDiJQp1URuPU8SdcK7zneoFCNKv4ADv_pj4WhOb1xZlhQyOqW6U1ybwszRl_0UsSn3khsBe6tj7J6QuH5wJHA1HTp4lztd8dvwGZOkNdORabEsGVzTuWzItkThR_l7vKvUxyjLaqIkTXtR8wLJbgCes2I_4G5UhAB4kwTvT9vtZ_WxAIh1vjGRoU98M9YIJuHsCZ27xzw-oDLdlIRvXS9VoyCLFPSQnY7KZd_-EjrRV2Tt2X26MUk" fill sizes="(max-width: 1024px) 100vw, 50vw"/>
           <div className="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-md text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">NSDA Accredited</div>
         </div>
         <div className="p-8 flex-grow">

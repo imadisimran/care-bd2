@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function LeadershipTeam() {
   const leaders = [
     { name: "Ahmed Javed Jamal", role: "Founder & Business Lead", img: "AB6AXuCQMXVbmrCuo74EPt3H3RbF5ad04cZ6gd3By0D2pGfN4-xk2bGo8ABFJGaiR-m9XMlrthgNsioPqpxMmhTKINqvvH8XeV9HrLarBZi1F-Rd6TZliSECV9CdykLLxiTZHq6kZeXMh4nqDetsWa0y1Vrck42S2TQGrj24JKflUrFnoaLzzN-Rw3d3BE4IFuiWvT_t1u8W5Xl8VK2PW5juJNoD4wHRdGYS4jm5nbNTgZJJpyZZXwD-nmK_1sLsNNY3PGk7vXiP8PzrlHQ" },
@@ -19,7 +21,7 @@ export default function LeadershipTeam() {
         {leaders.map((leader, i) => (
           <div key={i} className="service-card-glass p-6 rounded-xl flex flex-col items-center text-center group">
             <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-primary/10 mb-4 group-hover:scale-105 transition-transform">
-              <img alt={leader.name} className="w-full h-full object-cover" src={`https://lh3.googleusercontent.com/aida-public/${leader.img}`}/>
+              <Image alt={leader.name} className="object-cover" src={`https://lh3.googleusercontent.com/aida-public/${leader.img}`} fill sizes="96px"/>
             </div>
             <h4 className="font-bold text-primary">{leader.name}</h4>
             <p className="text-xs text-on-surface/60 font-medium">{leader.role}</p>

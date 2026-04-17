@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutHero() {
   return (
     <section className="relative rounded-xl p-8 md:p-16 overflow-hidden glass-card">
@@ -30,7 +32,7 @@ export default function AboutHero() {
         
         <div className="relative group">
           <div className="aspect-video rounded-xl overflow-hidden shadow-2xl relative bg-primary-container/10">
-            <img alt="Caregiver training session" className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPYaRpnEDF0J1ENSQTpdiWWvpEgcOvu7elX6_0d7XRRxMsBrh23zM93T-yjSYdfy1ViVDjBCcx-m1fezQET8_KolqG9BOo3QyYPQj8jl4lzXl15tsJJDA6h_yHxAagyYYeVR_ujiFUeJEVmTCWtogI8n5BPaeruBFOsWxhbajUEVhZwBztA29CJjUiCBj3G2hV7gOswZ2uiDNywi0mtkQgxiTzx_Bsw-qu244gIn5VMB_PUzXV_VnsHIi-fra0t_CjGfvQ38buZfs"/>
+            <Image alt="Caregiver training session" className="object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPYaRpnEDF0J1ENSQTpdiWWvpEgcOvu7elX6_0d7XRRxMsBrh23zM93T-yjSYdfy1ViVDjBCcx-m1fezQET8_KolqG9BOo3QyYPQj8jl4lzXl15tsJJDA6h_yHxAagyYYeVR_ujiFUeJEVmTCWtogI8n5BPaeruBFOsWxhbajUEVhZwBztA29CJjUiCBj3G2hV7gOswZ2uiDNywi0mtkQgxiTzx_Bsw-qu244gIn5VMB_PUzXV_VnsHIi-fra0t_CjGfvQ38buZfs" fill sizes="(max-width: 1024px) 100vw, 50vw"/>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-20 h-20 bg-white/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300">
                 <span className="material-symbols-outlined text-white text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>

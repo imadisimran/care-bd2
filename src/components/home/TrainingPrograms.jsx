@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TrainingPrograms() {
   const programs = [
@@ -42,7 +43,7 @@ export default function TrainingPrograms() {
           {programs.map((prog, idx) => (
             <div key={idx} className="service-card-glass rounded-[2rem] overflow-hidden flex flex-col group hover:shadow-2xl transition-all duration-500 border-white/60">
               <div className="relative h-64 overflow-hidden">
-                <img alt={prog.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={prog.imgSrc}/>
+                <Image alt={prog.title} className="object-cover group-hover:scale-110 transition-transform duration-700" src={prog.imgSrc} fill sizes="(max-width: 768px) 100vw, 50vw" />
                 <div className="absolute top-4 left-4 flex gap-2">
                   <span className={`px-3 py-1 ${prog.typeColor} text-white text-[10px] font-bold uppercase rounded-full`}>{prog.type}</span>
                   <span className="px-3 py-1 bg-[#84A98C] text-white text-[10px] font-bold uppercase rounded-full">NSDA</span>
