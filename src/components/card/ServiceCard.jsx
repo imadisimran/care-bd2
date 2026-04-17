@@ -3,17 +3,6 @@ import Link from "next/link";
 export default function ServiceCard({ service }) {
   const { title, desc, image, tags } = service;
 
-  // const displayDescription = desc || description;
-
-  // // Handle different tag structures
-  // let displayTags = [];
-  // if (tags && Array.isArray(tags)) {
-  //   displayTags = tags.map((t) => (typeof t === "string" ? { text: t } : t));
-  // } else {
-  //   if (tag1) displayTags.push({ text: tag1, type: "primary" });
-  //   if (tag2) displayTags.push({ text: tag2, type: "default" });
-  // }
-
   // Pre-process image URL
   const imageUrl = image?.startsWith("http")
     ? image
@@ -68,18 +57,12 @@ export default function ServiceCard({ service }) {
             </span>{" "}
             Book Now
           </button>
-          {service._id ? (
-            <Link
-              href={`/services/${service._id}`}
-              className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all flex items-center justify-center"
-            >
-              Details
-            </Link>
-          ) : (
-            <button className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all">
-              Details
-            </button>
-          )}
+          <Link
+            href={`/services/${service._id}`}
+            className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all flex items-center justify-center"
+          >
+            Details
+          </Link>
         </div>
       </div>
     </div>

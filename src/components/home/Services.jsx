@@ -1,11 +1,10 @@
-import Link from "next/link";
 import ServiceCard from "../card/ServiceCard";
-import { services } from "@/lib/servicesData";
+import { getServiceCardData } from "@/actions/server/service";
 
 
-export default function Services() {
+export default async function Services() {
   // Only show the first 4 services on the homepage
-  const homeServices = services.slice(0, 4);
+  const homeServices = await getServiceCardData({ skip: 0, limit: 4 })
 
   return (
     <section className="py-section px-8 lg:px-16 bg-surface-container-low/30">
