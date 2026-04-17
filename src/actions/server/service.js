@@ -1,5 +1,6 @@
 "use server"
 import { collections, dbConnect } from "@/lib/dbConnect";
+import { ObjectId } from "mongodb";
 
 const serviceCollection = dbConnect(collections.Services);
 
@@ -25,5 +26,19 @@ export const getTotalServices = async () => {
     } catch (error) {
         console.log(error);
         return 0
+    }
+}
+
+
+export const getServiceDetails=async(id)=>{
+    try {
+        const service = await serviceCollection.findOne({ _id: new ObjectId(id) });
+        if(service){
+            service._id=service._id.toString();
+        }
+        return service;
+    } catch (error) {
+        console.log(error);
+        return {}
     }
 }

@@ -7,6 +7,7 @@ import ServiceWhyChoose from "@/components/service-detail/ServiceWhyChoose";
 import ServiceHowItWorks from "@/components/service-detail/ServiceHowItWorks";
 import ServiceFAQ from "@/components/service-detail/ServiceFAQ";
 import { getServiceById } from "@/lib/servicesData";
+import { getServiceDetails } from "@/actions/server/service";
 
 /** Dynamic metadata for each service page */
 // export async function generateMetadata({ params }) {
@@ -23,9 +24,7 @@ import { getServiceById } from "@/lib/servicesData";
 
 export default async function ServiceDetailPage({ params }) {
   const { id } = await params;
-  const service = getServiceById(id)//fetch from db
-
-  console.log({id,service})
+  const service = await getServiceDetails(id)
 
   if (!service) notFound();
 
