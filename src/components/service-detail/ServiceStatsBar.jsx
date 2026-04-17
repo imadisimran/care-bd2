@@ -5,7 +5,6 @@ export default function ServiceStatsBar({ features = [] }) {
   const colorClasses = [
     { bg: "bg-primary", text: "text-on-primary" },
     { bg: "bg-tertiary", text: "text-on-tertiary" },
-    { bg: "bg-secondary", text: "text-on-secondary" },
   ];
 
   return (

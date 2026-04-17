@@ -1,18 +1,18 @@
 import Link from "next/link";
 
 export default function ServiceCard({ service }) {
-  const { title, desc, description, image, tag1, tag2, tags } = service;
+  const { title, desc, image, tags } = service;
 
-  const displayDescription = desc || description;
+  // const displayDescription = desc || description;
 
-  // Handle different tag structures
-  let displayTags = [];
-  if (tags && Array.isArray(tags)) {
-    displayTags = tags.map((t) => (typeof t === "string" ? { text: t } : t));
-  } else {
-    if (tag1) displayTags.push({ text: tag1, type: "primary" });
-    if (tag2) displayTags.push({ text: tag2, type: "default" });
-  }
+  // // Handle different tag structures
+  // let displayTags = [];
+  // if (tags && Array.isArray(tags)) {
+  //   displayTags = tags.map((t) => (typeof t === "string" ? { text: t } : t));
+  // } else {
+  //   if (tag1) displayTags.push({ text: tag1, type: "primary" });
+  //   if (tag2) displayTags.push({ text: tag2, type: "default" });
+  // }
 
   // Pre-process image URL
   const imageUrl = image?.startsWith("http")
@@ -37,9 +37,9 @@ export default function ServiceCard({ service }) {
         )}
 
         <div className="absolute top-4 left-4 right-4 flex flex-wrap gap-2 justify-between items-center pointer-events-none">
-          {displayTags.map((tag, idx) => (
+          {tags.map((tag, i) => (
             <span
-              key={idx}
+              key={i}
               className={`px-2.5 py-1 text-white text-[10px] font-bold uppercase rounded-md shadow-sm ${
                 tag.type === "primary"
                   ? "bg-primary"
@@ -59,7 +59,7 @@ export default function ServiceCard({ service }) {
           {title}
         </h3>
         <p className="text-sm text-on-surface-variant/90 font-medium line-clamp-3">
-          {displayDescription}
+          {desc}
         </p>
         <div className="pt-4 flex gap-2 mt-auto">
           <button className="flex-1 bg-[#84A98C] text-white py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-90 transition-all flex items-center justify-center gap-1">
@@ -68,9 +68,9 @@ export default function ServiceCard({ service }) {
             </span>{" "}
             Book Now
           </button>
-          {service.slug ? (
+          {service._id ? (
             <Link
-              href={`/services/${service.slug}`}
+              href={`/services/${service._id}`}
               className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all flex items-center justify-center"
             >
               Details

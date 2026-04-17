@@ -2,7 +2,7 @@
  * Pricing and CTA bar shown below the hero image.
  * Accepts priceFrom, pricePer, rating, and an array of features.
  */
-export default function ServicePricingBar({ priceFrom, pricePer, rating, features = [] }) {
+export default function ServicePricingBar({ price, pricePer, rating }) {
   return (
     <section className="mb-24">
       <div className="bg-surface-container-lowest/80 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] shadow-[0_10px_40px_rgba(27,28,25,0.06)] border border-white/20">
@@ -14,7 +14,7 @@ export default function ServicePricingBar({ priceFrom, pricePer, rating, feature
                 Starting from
               </span>
               <h2 className="text-5xl font-bold text-primary">
-                {priceFrom}
+                {price}
                 <span className="text-xl text-on-surface-variant font-medium">
                   /{pricePer}
                 </span>
@@ -31,18 +31,6 @@ export default function ServicePricingBar({ priceFrom, pricePer, rating, feature
               <span className="text-tertiary font-bold text-lg">{rating} Rating</span>
             </div>
           </div>
-
-          {/* Feature pills */}
-          {features.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-6">
-              {features.map((f, i) => (
-                <div key={i} className="flex items-center gap-3 text-on-surface-variant">
-                  <span className="material-symbols-outlined text-secondary">{f.icon}</span>
-                  <span className="text-sm font-semibold">{f.label}</span>
-                </div>
-              ))}
-            </div>
-          )}
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">

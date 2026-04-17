@@ -4,7 +4,7 @@ import Link from "next/link";
  * Hero section for a service detail page.
  * Renders breadcrumb, heading, description, and a full-width banner image.
  */
-export default function ServiceHero({ breadcrumb, title, desc, image }) {
+export default function ServiceHero({ title, desc, image }) {
   const imageUrl = image?.startsWith("http")
     ? image
     : `https://lh3.googleusercontent.com/aida-public/${image}`;
@@ -18,7 +18,7 @@ export default function ServiceHero({ breadcrumb, title, desc, image }) {
             Services
           </Link>
           <span className="material-symbols-outlined text-sm">chevron_right</span>
-          <span className="text-primary font-bold">{breadcrumb}</span>
+          <span className="text-primary font-bold">{title}</span>
         </nav>
 
         <h1 className="text-5xl lg:text-7xl font-bold text-primary mb-8 tracking-tight leading-[1.1]">
