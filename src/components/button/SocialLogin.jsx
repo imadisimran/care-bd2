@@ -47,7 +47,7 @@ const SocialLogin = () => {
       {/* Google Login Button */}
       <button
         onClick={handleGoogleLogin}
-        className="w-full bg-white/40 hover:bg-white/60 border border-white/40 py-4 rounded-full font-bold text-sm tracking-tight flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-95 shadow-sm group"
+        className="w-full bg-white/40 hover:bg-white/60 border border-white/40 py-4 rounded-full font-bold text-sm tracking-tight flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-95 shadow-sm group cursor-pointer"
         type="button"
       >
         <svg

@@ -1,3 +1,5 @@
+import ServiceCard from "../card/ServiceCard";
+
 export default function ServiceGrid() {
   const services = [
     {
@@ -55,39 +57,7 @@ export default function ServiceGrid() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {services.map((service, index) => (
-        <div key={index} className="bg-surface-container-low rounded-lg p-6 group hover:-translate-y-2 transition-all duration-300 flex flex-col">
-          <div className="relative h-64 mb-6 overflow-hidden rounded-lg">
-            <img 
-              alt={service.title} 
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-              src={`https://lh3.googleusercontent.com/aida-public/${service.image}`}
-            />
-            <div className="absolute top-4 left-4 flex flex-col gap-2">
-              {service.tags.map((tag, tagIndex) => (
-                <span 
-                  key={tagIndex} 
-                  className={`text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${
-                    tag.type === "primary" ? "bg-primary text-white" :
-                    tag.type === "error" ? "bg-error text-white" :
-                    "bg-white/80 backdrop-blur-md text-primary"
-                  }`}
-                >
-                  {tag.text}
-                </span>
-              ))}
-            </div>
-          </div>
-          <h3 className="text-2xl font-bold text-primary mb-3">{service.title}</h3>
-          <p className="text-on-surface/70 leading-relaxed mb-8">{service.description}</p>
-          <div className="mt-auto flex items-center justify-between gap-4">
-            <button className="flex-1 bg-tertiary-container text-on-tertiary-container py-3 rounded-full font-bold hover:scale-[1.02] transition-transform">
-              Book Now
-            </button>
-            <button className="px-6 py-3 border border-outline-variant rounded-full font-bold text-primary hover:bg-surface-container-high transition-colors">
-              Details
-            </button>
-          </div>
-        </div>
+        <ServiceCard key={index} service={service} />
       ))}
     </section>
   );
