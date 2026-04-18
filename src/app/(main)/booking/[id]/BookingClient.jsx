@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Clock, MapPin, Stethoscope, Timer, Home, CheckCircle2 } from 'lucide-react';
 import GoBackButton from '@/components/button/GoBackButton';
 import { createBooking, getDistricts } from '@/actions/server/booking';
+import { showErrorAlert, showSuccessAlert } from '@/lib/alert';
 
 export default function BookingPageClient({service,divisions}) {
     const [selectedDuration, setSelectedDuration] = useState(1);
@@ -35,7 +36,11 @@ export default function BookingPageClient({service,divisions}) {
             address
         }
         const res=await createBooking(bookingData)
-        console.log(res)
+        if(res.success){
+           showSuccessAlert({text:res.message,title:"Success"})
+        }else{
+            showErrorAlert({text:res.message,title:"Error"})
+        }
     }
 
 
@@ -169,7 +174,11 @@ export default function BookingPageClient({service,divisions}) {
                                     <p className="text-[10px] text-on-surface-variant mt-1 uppercase tracking-tighter">All inclusive of taxes</p>
                                 </div>
                             </div>
-                            <button onClick={handleBooking} className="w-full bg-tertiary-container text-on-tertiary-container py-5 rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-tertiary-container/20 mt-4 flex items-center justify-center gap-2 cursor-pointer">
+                            <button 
+                                onClick={handleBooking} 
+                                disabled={division === 'Select A Division' || district === 'Select A Division First' || district === 'Select A District' || !address.trim()}
+                                className="w-full bg-tertiary-container text-on-tertiary-container py-5 rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100 transition-all shadow-lg shadow-tertiary-container/20 mt-4 flex items-center justify-center gap-2 cursor-pointer"
+                            >
                                 <CheckCircle2 className="w-5 h-5" />
                                 Confirm Booking
                             </button>

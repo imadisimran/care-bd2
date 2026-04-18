@@ -33,6 +33,7 @@ if (process.env.NODE_ENV === "development") {
 export const collections = {
   Users: "users",
   Services: "services",
+  Bookings: "bookings",
 };
 
 export const dbConnect = (c) => {
