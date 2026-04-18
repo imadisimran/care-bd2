@@ -51,12 +51,12 @@ export default function ServiceCard({ service }) {
           {desc}
         </p>
         <div className="pt-4 flex gap-2 mt-auto">
-          <button className="flex-1 bg-[#84A98C] text-white py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-90 transition-all flex items-center justify-center gap-1">
+          <Link href={`/booking/${service._id}`} className="flex-1 bg-[#84A98C] text-white py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-90 transition-all flex items-center justify-center gap-1">
             <span className="material-symbols-outlined text-xs">
               calendar_today
             </span>{" "}
             Book Now
-          </button>
+          </Link>
           <Link
             href={`/services/${service._id}`}
             className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all flex items-center justify-center"

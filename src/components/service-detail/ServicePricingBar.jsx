@@ -4,7 +4,7 @@ import Link from "next/link";
  * Pricing and CTA bar shown below the hero image.
  * Accepts priceFrom, pricePer, rating, and an array of features.
  */
-export default function ServicePricingBar({ price, pricePer, rating }) {
+export default function ServicePricingBar({ price, pricePer, rating, serviceId }) {
   return (
     <section className="mb-24">
       <div className="bg-surface-container-lowest/80 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] shadow-[0_10px_40px_rgba(27,28,25,0.06)] border border-white/20">
@@ -36,7 +36,7 @@ export default function ServicePricingBar({ price, pricePer, rating }) {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-            <Link href="/booking" className="px-10 py-4 bg-tertiary-container text-on-tertiary-container rounded-full font-bold hover:scale-[1.05] transition-transform">
+            <Link href={`/booking/${serviceId}`} className="px-10 py-4 bg-tertiary-container text-on-tertiary-container rounded-full font-bold hover:scale-[1.05] transition-transform">
               Book Now
             </Link>
             <Link href="/contact" className="px-10 py-4 border border-outline-variant text-primary rounded-full font-bold hover:bg-surface-container-low transition-colors">

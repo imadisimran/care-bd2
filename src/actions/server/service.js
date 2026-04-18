@@ -43,3 +43,16 @@ export const getServiceDetails = cache(async (id) => {
         return null
     }
 })
+
+export const getServiceBookingInfo = async (id) => {
+    try {
+        const service = await serviceCollection.findOne({ _id: new ObjectId(id) }, { projection: { title: 1, price: 1, pricePer: 1, tags: 1 } });
+        if (service) {
+            service._id = service._id.toString();
+        }
+        return service;
+    } catch (error) {
+        console.log(error);
+        return null
+    }
+}

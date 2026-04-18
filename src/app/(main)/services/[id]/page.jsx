@@ -41,6 +41,7 @@ export default async function ServiceDetailPage({ params }) {
         price={service.price}
         pricePer={service.pricePer}
         rating={service.rating}
+        serviceId={service._id}
       />
 
       {/* Quick stats row */}
