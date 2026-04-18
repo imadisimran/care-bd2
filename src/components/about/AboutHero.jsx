@@ -11,7 +11,7 @@ export default function AboutHero() {
               About <span className="text-secondary-container">Care BD</span>
             </h1>
           </div>
-          <div className="space-y-6 text-[#1b1c19] text-lg leading-relaxed">
+          <div className="space-y-6 text-on-background text-lg leading-relaxed">
             <p>
               Our journey began with a simple yet profound realization: caregiving is an architectural act of love and precision. We envisioned a sanctuary where the highest standards of professional care meet the warmth of human empathy.
             </p>
@@ -23,7 +23,7 @@ export default function AboutHero() {
             </p>
           </div>
           <div className="pt-4">
-            <button className="bg-tertiary-container text-[#99bea0] px-10 py-4 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3">
+            <button className="bg-tertiary-container text-on-tertiary-container px-10 py-4 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3">
               Learn About Our Services
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>

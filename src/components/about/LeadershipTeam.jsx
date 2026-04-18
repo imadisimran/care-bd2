@@ -15,7 +15,7 @@ export default function LeadershipTeam() {
   return (
     <section className="space-y-16">
       <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#4B3F72] tracking-tight">Our Leadership Team</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-primary-container tracking-tight">Our Leadership Team</h2>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {leaders.map((leader, i) => (

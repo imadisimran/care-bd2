@@ -60,9 +60,9 @@ export default function RegisterPage() {
       await showSuccessAlert({
         title: "Welcome! 🎉",
         html: `
-          <p style="color:#48454f;font-size:0.875rem;margin:0;">
+          <p style="color:var(--color-on-surface-variant);font-size:0.875rem;margin:0;">
             ${postUserResult.message}<br/>
-            <strong style="color:#34285a">${data.name}</strong>, your journey of personalised care begins now.
+            <strong style="color:var(--color-primary)">${data.name}</strong>, your journey of personalised care begins now.
           </p>
         `,
         confirmButtonText: "Ok",

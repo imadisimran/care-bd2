@@ -25,10 +25,10 @@ export function MobileNavDropdown() {
           menu
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 mt-2 mr-4 bg-[#fbf9f4] border-outline-variant/20 shadow-2xl rounded-xl z-[60]" align="end">
+      <DropdownMenuContent className="w-56 mt-2 mr-4 bg-background border-outline-variant/20 shadow-2xl rounded-xl z-[60]" align="end">
         <DropdownMenuGroup className="p-2 gap-1 flex flex-col">
           {links.map((link) => (
-            <DropdownMenuItem key={link.name} asChild className="cursor-pointer font-['Manrope'] font-bold uppercase text-[#34285a] hover:bg-primary/5 focus:bg-primary/5 py-2.5 px-4 rounded-md">
+            <DropdownMenuItem key={link.name} asChild className="cursor-pointer font-['Manrope'] font-bold uppercase text-primary hover:bg-primary/5 focus:bg-primary/5 py-2.5 px-4 rounded-md">
               <Link href={link.href}>
                 {link.name}
               </Link>

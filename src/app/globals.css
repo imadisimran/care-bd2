@@ -52,6 +52,9 @@
   --color-on-secondary-fixed: #1b0062;
   --color-on-primary: #ffffff;
   --color-surface-container-highest: #e4e2dd;
+  --color-sage: #84A98C;
+  --color-amber: #fcc434;
+  --color-error-dark: #8B0000;
 
   --font-headline: var(--font-manrope);
   --font-body: var(--font-manrope);
@@ -244,7 +247,7 @@
   font-family: var(--font-manrope, 'Manrope', sans-serif) !important;
   font-size: 1.375rem !important;
   font-weight: 800 !important;
-  color: #34285a !important;
+  color: var(--color-primary) !important;
   letter-spacing: -0.02em !important;
   margin-bottom: 0.5rem !important;
 }

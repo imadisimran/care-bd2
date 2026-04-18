@@ -9,7 +9,7 @@ export default function CourseCTA() {
             Join thousands of students who have successfully completed our training programs and are now making a difference in their communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="w-full sm:w-auto px-8 py-4 bg-white text-[#84A98C] rounded-xl font-bold whisper-shadow hover:scale-105 transition-all flex items-center justify-center gap-2">
+            <button className="w-full sm:w-auto px-8 py-4 bg-white text-sage rounded-xl font-bold whisper-shadow hover:scale-105 transition-all flex items-center justify-center gap-2">
               <span className="material-symbols-outlined">menu_book</span>
               Browse Free Courses
             </button>

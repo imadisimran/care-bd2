@@ -1,7 +1,7 @@
 export default function EmergencyBanner() {
   return (
     <section>
-      <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-error to-[#7a1111] p-12 text-white">
+      <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-error to-error-dark p-12 text-white">
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="max-w-2xl">
             <span className="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-bold tracking-widest uppercase mb-4">

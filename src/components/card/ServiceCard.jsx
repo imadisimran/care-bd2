@@ -18,8 +18,8 @@ export default function ServiceCard({ service }) {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-[#c5eccc]/40">
-            <span className="material-symbols-outlined text-6xl text-[#84A98C]/60">
+          <div className="w-full h-full flex items-center justify-center bg-tertiary-fixed/40">
+            <span className="material-symbols-outlined text-6xl text-sage/60">
               medical_services
             </span>
           </div>
@@ -34,7 +34,7 @@ export default function ServiceCard({ service }) {
                   ? "bg-primary"
                   : tag.type === "error"
                   ? "bg-error"
-                  : "bg-[#84A98C]"
+                  : "bg-sage"
               }`}
             >
               {tag.text}
@@ -51,7 +51,7 @@ export default function ServiceCard({ service }) {
           {desc}
         </p>
         <div className="pt-4 flex gap-2 mt-auto">
-          <Link href={`/booking/${service._id}`} className="flex-1 bg-[#84A98C] text-white py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-90 transition-all flex items-center justify-center gap-1">
+          <Link href={`/booking/${service._id}`} className="flex-1 bg-sage text-white py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-90 transition-all flex items-center justify-center gap-1">
             <span className="material-symbols-outlined text-xs">
               calendar_today
             </span>{" "}
@@ -59,7 +59,7 @@ export default function ServiceCard({ service }) {
           </Link>
           <Link
             href={`/services/${service._id}`}
-            className="flex-1 border border-[#84A98C]/30 text-[#84A98C] py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#84A98C]/10 transition-all flex items-center justify-center"
+            className="flex-1 border border-sage/30 text-sage py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-sage/10 transition-all flex items-center justify-center"
           >
             Details
           </Link>

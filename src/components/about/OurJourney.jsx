@@ -2,7 +2,7 @@ export default function OurJourney() {
   return (
     <section className="space-y-16">
       <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#4B3F72] tracking-tight">Our Journey</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-primary-container tracking-tight">Our Journey</h2>
       </div>
       <div className="relative max-w-4xl mx-auto py-10">
         <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-outline-variant/30"></div>

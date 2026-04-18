@@ -68,7 +68,7 @@ export default function AvailableCourses() {
               <div className="font-bold text-primary">Dr. Khairun Naher</div>
             </div>
             <div className="flex gap-3">
-              <button className="flex-grow py-3 bg-[#84A98C] text-white rounded-lg font-bold text-sm hover:brightness-95 transition-all flex items-center justify-center gap-2">
+              <button className="flex-grow py-3 bg-sage text-white rounded-lg font-bold text-sm hover:brightness-95 transition-all flex items-center justify-center gap-2">
                 <span className="material-symbols-outlined text-lg">menu_book</span>
                 Sign In to Enroll
               </button>
@@ -107,7 +107,7 @@ export default function AvailableCourses() {
               <div className="font-bold text-primary">Dr. Khairun Naher</div>
             </div>
             <div className="flex gap-3">
-              <button className="flex-grow py-3 bg-[#84A98C] text-white rounded-lg font-bold text-sm hover:brightness-95 transition-all flex items-center justify-center gap-2">
+              <button className="flex-grow py-3 bg-sage text-white rounded-lg font-bold text-sm hover:brightness-95 transition-all flex items-center justify-center gap-2">
                 <span className="material-symbols-outlined text-lg">menu_book</span>
                 Sign In to Enroll
               </button>

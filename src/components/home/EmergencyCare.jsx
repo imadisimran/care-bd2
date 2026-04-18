@@ -4,7 +4,7 @@ export default function EmergencyCare() {
   return (
     <section className="py-section px-8 lg:px-16">
       <div className="container mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#C21807] to-[#8B0000] p-12 lg:p-20 text-center shadow-2xl whisper-shadow">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-error to-error-dark p-12 lg:p-20 text-center shadow-2xl whisper-shadow">
           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
             <div className="absolute -top-24 -left-24 w-64 h-64 rounded-full border-[20px] border-white"></div>
             <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full border-[40px] border-white"></div>

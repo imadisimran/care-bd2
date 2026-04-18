@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ContactEmergency() {
   return (
     <section>
-      <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-error to-[#8a1414] p-10 md:p-14 text-white shadow-2xl">
+      <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-error to-error-dark p-10 md:p-14 text-white shadow-2xl">
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="text-center lg:text-left">
             <h2 className="text-3xl md:text-4xl font-black mb-4">Emergency Care Services Available 24/7</h2>

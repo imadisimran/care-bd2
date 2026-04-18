@@ -1,11 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
-/**
- * Accordion FAQ section.
- * Accepts an array of { q, a } objects and renders them as interactive accordions.
- */
 export default function ServiceFAQ({ faqs = [] }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -32,7 +27,7 @@ export default function ServiceFAQ({ faqs = [] }) {
               >
                 <span className="font-bold text-primary text-lg">{faq.q}</span>
                 <span
-                  className={`material-symbols-outlined text-secondary transition-transform duration-300 ${
+                  className={`material-symbols-outlined text-primary transition-transform duration-300 ${
                     isOpen ? "rotate-180" : ""
                   }`}
                 >

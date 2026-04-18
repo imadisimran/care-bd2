@@ -10,7 +10,7 @@ import useAuth from "@/hooks/useAuth";
 export default function Navbar() {
   const {user,loading}=useAuth()
   return (
-    <nav className="fixed top-0 left-0 w-full px-8 py-4 bg-[#fbf9f4]/85 backdrop-blur-md z-50 flex justify-between items-center border-b border-outline-variant/20 shadow-sm transition-all">
+    <nav className="fixed top-0 left-0 w-full px-8 py-4 bg-background/85 backdrop-blur-md z-50 flex justify-between items-center border-b border-outline-variant/20 shadow-sm transition-all">
       <div className="flex items-center gap-12">
         <Link href="/" className="flex items-center">
           <Image

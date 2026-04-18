@@ -2,7 +2,7 @@ export default function Impact() {
   return (
     <section className="space-y-16">
       <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#4B3F72] tracking-tight">Our Impact</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-primary-container tracking-tight">Our Impact</h2>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="glass-card p-10 rounded-2xl text-center border-primary-fixed/20">
