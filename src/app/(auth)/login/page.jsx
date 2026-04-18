@@ -196,7 +196,7 @@ export default function LoginPage() {
 
           <div className="mt-10 pt-8 border-t border-outline-variant/10 text-center">
             <p className="text-sm text-on-surface-variant font-medium">
-              New to Songjog Care?{" "}
+              New to Care BD?{" "}
               <Link
                 href={`/register?callbackUrl=${callbackUrl}`}
                 className="text-primary-container font-bold hover:underline decoration-2 underline-offset-4 ml-1"

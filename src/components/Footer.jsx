@@ -27,7 +27,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-white/80">
                 <span className="material-symbols-outlined text-lg text-[#84A98C]">mail</span>
-                <span className="text-sm">info@songjogcare.com</span>
+                <span className="text-sm">info@carebd.com</span>
               </div>
             </div>
             
@@ -77,7 +77,7 @@ export default function Footer() {
         
         <div className="pt-12 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center lg:items-start gap-4">
-            <p className="text-white/40 text-[13px]">© 2026 Songjog Care. All rights reserved.</p>
+            <p className="text-white/40 text-[13px]">© 2026 Care BD. All rights reserved.</p>
             <div className="flex gap-4 items-center">
               <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#fcc434]"><span className="w-1.5 h-1.5 rounded-full bg-[#fcc434]"></span> NSDA Accredited</span>
               <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#84A98C]"><span className="w-1.5 h-1.5 rounded-full bg-[#84A98C]"></span> Licensed Healthcare Provider</span>

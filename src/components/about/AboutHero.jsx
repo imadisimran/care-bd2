@@ -8,7 +8,7 @@ export default function AboutHero() {
           <div>
             <span className="text-secondary font-bold tracking-widest text-xs uppercase block mb-4">Establishing Excellence</span>
             <h1 className="text-4xl md:text-6xl font-extrabold text-primary-container leading-tight tracking-tighter">
-              About <span className="text-secondary-container">Songjog Caregiver Center</span>
+              About <span className="text-secondary-container">Care BD</span>
             </h1>
           </div>
           <div className="space-y-6 text-[#1b1c19] text-lg leading-relaxed">
@@ -16,7 +16,7 @@ export default function AboutHero() {
               Our journey began with a simple yet profound realization: caregiving is an architectural act of love and precision. We envisioned a sanctuary where the highest standards of professional care meet the warmth of human empathy.
             </p>
             <p>
-              Songjog Care is proud to be a pioneer in the region, holding full <span className="font-bold text-primary">NSDA Accreditation</span>. This certification isn't just a label; it's our promise of rigorous quality control, ethical practice, and continuous professional development for every caregiver in our ecosystem.
+              Care BD is proud to be a pioneer in the region, holding full <span className="font-bold text-primary">NSDA Accreditation</span>. This certification isn't just a label; it's our promise of rigorous quality control, ethical practice, and continuous professional development for every caregiver in our ecosystem.
             </p>
             <p>
               Our mission is to redefine the caregiving landscape by integrating high-end editorial standards of organization with the deep-rooted cultural values of companionship and respect.
@@ -39,7 +39,7 @@ export default function AboutHero() {
               </div>
             </div>
             <div className="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-lg border-white/10">
-              <h3 className="text-primary font-bold text-xl mb-1">Songjog Caregiver Center: Our Journey, Success Stories</h3>
+              <h3 className="text-primary font-bold text-xl mb-1">Care BD: Our Journey, Success Stories</h3>
               <p className="text-sm text-primary/70">Watch how we are transforming lives through accredited care.</p>
             </div>
           </div>

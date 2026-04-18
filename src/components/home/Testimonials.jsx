@@ -1,17 +1,17 @@
 export default function Testimonials() {
   const testimonials = [
     {
-      text: `"Songjog Care provided exceptional care for my elderly mother. Their caregivers are not only skilled but genuinely caring. I couldn't have asked for better support during this difficult time."`,
+      text: `"Care BD provided exceptional care for my elderly mother. Their caregivers are not only skilled but genuinely caring. I couldn't have asked for better support during this difficult time."`,
       author: "Mrs. Rahman",
       role: "Family Member"
     },
     {
-      text: `"I regularly refer patients to Songjog Care for post-operative care. Their medical support team is highly trained and follows proper protocols. Excellent service quality."`,
+      text: `"I regularly refer patients to Care BD for post-operative care. Their medical support team is highly trained and follows proper protocols. Excellent service quality."`,
       author: "Dr. Ahmed",
       role: "Healthcare Professional"
     },
     {
-      text: `"The NSDA-accredited training program at Songjog Care transformed my career. The instructors are experienced and the hands-on training prepared me well for my caregiving role."`,
+      text: `"The NSDA-accredited training program at Care BD transformed my career. The instructors are experienced and the hands-on training prepared me well for my caregiving role."`,
       author: "Fatima Begum",
       role: "Course Graduate"
     }

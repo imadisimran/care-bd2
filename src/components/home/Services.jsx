@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ServiceCard from "../card/ServiceCard";
 import { getServiceCardData } from "@/actions/server/service";
 
@@ -33,9 +34,9 @@ export default async function Services() {
 
         
         <div className="mt-16 text-center">
-          <button className="border border-[#84A98C] text-[#84A98C] px-10 py-3.5 rounded-full text-sm font-black uppercase tracking-[0.15em] hover:bg-[#84A98C] hover:text-white transition-all duration-300">
+          <Link href="/services" className="border border-[#84A98C] text-[#84A98C] px-10 py-3.5 rounded-full text-sm font-black uppercase tracking-[0.15em] hover:bg-[#84A98C] hover:text-white transition-all duration-300">
             View All Services
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -86,7 +86,7 @@ export default function ContactForm() {
               <span className="material-symbols-outlined text-primary text-3xl">mail</span>
               <div>
                 <h4 className="font-bold text-primary mb-1">Email Support</h4>
-                <p className="text-on-surface-variant text-sm">care@songjog.com</p>
+                <p className="text-on-surface-variant text-sm">care@carebd.com</p>
               </div>
             </div>
             <div className="bg-surface-container-high p-6 rounded-lg flex items-start gap-4">

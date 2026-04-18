@@ -12,7 +12,7 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "Songjog Care | Architectural Sanctuary for Caregiving",
+  title: "Care BD | Architectural Sanctuary for Caregiving",
   description: "Experience a high-end architectural approach to compassion. We provide certified medical assistance and personalized care that turns your home into a safe, healing sanctuary.",
 };
 

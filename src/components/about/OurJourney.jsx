@@ -14,7 +14,7 @@ export default function OurJourney() {
                   <span className="text-secondary font-bold text-2xl">2020</span>
                   <span className="text-2xl">🚀</span>
                 </div>
-                <p className="text-sm text-on-surface/70 leading-relaxed">Songjog Caregiver Center launched as a COVID-19 response initiative under Songjog Foundation.</p>
+                <p className="text-sm text-on-surface/70 leading-relaxed">Care BD launched as a COVID-19 response initiative under Songjog Foundation.</p>
               </div>
             </div>
             <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary ring-4 ring-secondary-fixed z-10"></div>
