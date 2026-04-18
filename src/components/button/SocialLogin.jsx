@@ -10,7 +10,7 @@ const SocialLogin = () => {
   const {googleSignIn}=useAuth()
   const router=useRouter()
   const searchParams=useSearchParams()
-  const callbackUrl=searchParams.get("callbackUrl")
+  const callbackUrl=searchParams.get("callbackUrl") || "/"
   const handleGoogleLogin = async() => {
     try{
       const result = await googleSignIn()
@@ -25,7 +25,7 @@ const SocialLogin = () => {
       const data=await postUserGoogle()
       if(data.success && response.ok){
         showSuccessAlert({title:"Login Successful",text:"Welcome back!"})
-        router.push(callbackUrl || "/")
+        router.push(callbackUrl)
       }else{
         showErrorAlert({title:"Login Failed",text:data.message})
       }

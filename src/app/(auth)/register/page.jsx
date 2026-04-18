@@ -16,7 +16,7 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const searchParams=useSearchParams()
-  const callbackUrl=searchParams.get("callbackUrl")
+  const callbackUrl=searchParams.get("callbackUrl") || "/"
   const {
     register,
     handleSubmit,
@@ -52,7 +52,7 @@ export default function RegisterPage() {
       
       if(response.ok && postUserResult.success){
         router.refresh()
-        router.push(callbackUrl || "/")
+        router.push(callbackUrl)
       }
 
       // console.log(result)

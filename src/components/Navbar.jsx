@@ -9,7 +9,6 @@ import useAuth from "@/hooks/useAuth";
 
 export default function Navbar() {
   const {user,loading}=useAuth()
-  // console.log(tokens)
   return (
     <nav className="fixed top-0 left-0 w-full px-8 py-4 bg-[#fbf9f4]/85 backdrop-blur-md z-50 flex justify-between items-center border-b border-outline-variant/20 shadow-sm transition-all">
       <div className="flex items-center gap-12">
@@ -49,9 +48,9 @@ export default function Navbar() {
               Sign In
             </Link>
           )}
-          <button className="bg-tertiary-container text-on-tertiary-container px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+          <Link href="/services" className="bg-tertiary-container text-on-tertiary-container px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
             Book Care Now
-          </button>
+          </Link>
         </div>
         <div className="flex md:hidden items-center">
           <MobileNavDropdown />

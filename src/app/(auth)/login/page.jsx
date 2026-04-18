@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const searchParams=useSearchParams()
-  const callbackUrl=searchParams.get("callbackUrl")
+  const callbackUrl=searchParams.get("callbackUrl") || "/"
   const router=useRouter()
   const {
     register,
@@ -34,7 +34,7 @@ export default function LoginPage() {
       });
       if(response.ok){
         showSuccessAlert({title:"Login Successful",text:"Welcome back!"})
-        router.push(callbackUrl || "/")
+        router.push(callbackUrl)
       }
     }catch(error){
       console.log(error)
@@ -198,7 +198,7 @@ export default function LoginPage() {
             <p className="text-sm text-on-surface-variant font-medium">
               New to Care BD?{" "}
               <Link
-                href={`/register?callbackUrl=${callbackUrl}`}
+                href={`/register?callbackUrl=${callbackUrl||"/"}`}
                 className="text-primary-container font-bold hover:underline decoration-2 underline-offset-4 ml-1"
               >
                 Create Account

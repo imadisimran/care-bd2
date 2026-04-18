@@ -18,7 +18,6 @@ export default function SignOutBtn() {
                     text: "You have been signed out successfully.",
                   });
             router.refresh()
-            // router.push('/')
         }catch(error){
             console.log(error)
             showErrorAlert({

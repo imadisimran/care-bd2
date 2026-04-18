@@ -69,9 +69,9 @@ export default function Hero() {
         
         <div className="flex flex-col items-center gap-6">
           <div className="w-full max-w-md p-2 bg-white/40 backdrop-blur-xl rounded-full border border-white/60 shadow-2xl whisper-shadow flex items-center gap-2">
-            <button className="flex-1 bg-tertiary-container text-white px-10 py-5 rounded-full text-lg font-bold uppercase tracking-widest hover:scale-[1.02] transition-all active:scale-95 shadow-lg">
+            <Link href="/services" className="flex-1 bg-tertiary-container text-white px-10 py-5 rounded-full text-lg font-bold uppercase tracking-widest hover:scale-[1.02] transition-all active:scale-95 shadow-lg">
               Book Care Service
-            </button>
+            </Link>
           </div>
           <Link href="/" className="text-primary/70 text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-2">
             View Training Courses <span className="material-symbols-outlined text-base">arrow_forward</span>
