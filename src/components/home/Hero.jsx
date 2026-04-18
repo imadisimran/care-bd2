@@ -58,7 +58,7 @@ export default function Hero() {
       
       <div className="container mx-auto max-w-4xl text-center z-10 space-y-12">
         <div className="space-y-6">
-          <span className="inline-block px-4 py-1.5 bg-info text-info rounded-full text-xs font-bold tracking-[0.1em] uppercase">Premium Care Sanctuary</span>
+          <span className="inline-block px-4 py-1.5 bg-info text-info-content rounded-full text-xs font-bold tracking-[0.1em] uppercase">Premium Care Sanctuary</span>
           <h1 className="text-6xl lg:text-8xl font-bold tracking-tighter text-primary leading-[1.05]">
             Professional <span className="text-accent">Caregiving</span> Services
           </h1>

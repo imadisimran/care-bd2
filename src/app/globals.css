@@ -6,49 +6,42 @@
   prefersdark: false;
   color-scheme: light;
 
-  /* Base Colors (Background & Surfaces) */
-  --color-base-100: #fbf9f4; /* from --color-background */
-  --color-base-200: #f0eee9; /* from --color-surface-container */
-  --color-base-300: #e4e2dd; /* from --color-surface-container-highest */
-  --color-base-content: #1b1c19; /* from --color-on-background */
+  --color-base-100: #fbf9f4;
+  --color-base-200: #f0eee9;
+  --color-base-300: #e4e2dd;
+  --color-base-content: #1b1c19;
 
-  /* Brand Colors */
-  --color-primary: #34285a; /* from --color-primary */
-  --color-primary-content: #ffffff; /* from --color-on-primary */
+  --color-primary: #34285a;
+  --color-primary-content: #ffffff;
   
-  --color-secondary: #6050af; /* from --color-secondary */
-  --color-secondary-content: #ffffff; /* from --color-on-secondary */
+  --color-secondary: #6050af;
+  --color-secondary-content: #ffffff;
   
-  --color-accent: #153721; /* mapped from --color-tertiary */
-  --color-accent-content: #ffffff; /* mapped from --color-on-tertiary */
+  --color-accent: #153721;
+  --color-accent-content: #ffffff;
 
-  /* Neutral Colors */
-  --color-neutral: #48454f; /* mapped from --color-on-surface-variant */
-  --color-neutral-content: #fbf9f4; /* mapped from --color-surface */
+  --color-neutral: #48454f;
+  --color-neutral-content: #fbf9f4;
 
-  /* State Colors */
-  --color-info: #a898fd; /* mapped from --color-secondary-container */
-  --color-info-content: #3c2a89; /* mapped from --color-on-secondary-container */
+  --color-info: #a898fd;
+  --color-info-content: #3c2a89;
   
-  --color-success: #84A98C; /* mapped from --color-sage */
-  --color-success-content: #00210e; /* mapped from --color-on-tertiary-fixed */
+  --color-success: #84A98C;
+  --color-success-content: #00210e;
   
-  --color-warning: #fcc434; /* mapped from --color-amber */
-  --color-warning-content: #1b1c19; /* mapped from --color-on-background */
+  --color-warning: #fcc434;
+  --color-warning-content: #1b1c19;
   
-  --color-error: #ba1a1a; /* from --color-error */
-  --color-error-content: #ffffff; /* from --color-on-error */
+  --color-error: #ba1a1a;
+  --color-error-content: #ffffff;
 
-  /* Border Radius (Mapped from your --radius tokens) */
   --radius-selector: 1rem;
   --radius-field: 1rem; 
   --radius-box: 1rem;
 
-  /* Base Sizes (DaisyUI Defaults) */
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
 
-  /* Borders & Effects */
   --border: 1px;
   --depth: 1;
   --noise: 0;
