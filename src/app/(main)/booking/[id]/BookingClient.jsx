@@ -12,6 +12,7 @@ export default function BookingPageClient({service,divisions}) {
     const [district, setDistrict] = useState('Select A Division First');
     const [districts,setDistricts]=useState([])
     const [address, setAddress] = useState('');
+    const [loading, setLoading] = useState(false);
     const serviceType=service.tags.find(s=>s.type==='default')
 
     const handleDivisionChange = async(e) => {
@@ -28,18 +29,25 @@ export default function BookingPageClient({service,divisions}) {
 
 
     const handleBooking=async()=>{
-        const bookingData={
-            serviceId:service._id,
-            duration:selectedDuration,
-            division,
-            district,
-            address
-        }
-        const res=await createBooking(bookingData)
-        if(res.success){
-           showSuccessAlert({text:res.message,title:"Success"})
-        }else{
-            showErrorAlert({text:res.message,title:"Error"})
+        setLoading(true)
+        try {
+            const bookingData={
+                serviceId:service._id,
+                duration:selectedDuration,
+                division,
+                district,
+                address
+            }
+            const res=await createBooking(bookingData)
+            if(res.success){
+               showSuccessAlert({text:res.message,title:"Success"})
+            }else{
+                showErrorAlert({text:res.message,title:"Error"})
+            }
+        } catch (error) {
+            showErrorAlert({text:"An unexpected error occurred",title:"Error"})
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -176,11 +184,20 @@ export default function BookingPageClient({service,divisions}) {
                             </div>
                             <button 
                                 onClick={handleBooking} 
-                                disabled={division === 'Select A Division' || district === 'Select A Division First' || district === 'Select A District' || !address.trim()}
+                                disabled={loading || division === 'Select A Division' || district === 'Select A Division First' || district === 'Select A District' || !address.trim()}
                                 className="w-full bg-tertiary-container text-on-tertiary-container py-5 rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100 transition-all shadow-lg shadow-tertiary-container/20 mt-4 flex items-center justify-center gap-2 cursor-pointer"
                             >
-                                <CheckCircle2 className="w-5 h-5" />
-                                Confirm Booking
+                                {loading ? (
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-5 h-5 border-2 border-on-tertiary-container border-t-transparent rounded-full animate-spin"></div>
+                                        <span>Processing...</span>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <CheckCircle2 className="w-5 h-5" />
+                                        Confirm Booking
+                                    </>
+                                )}
                             </button>
                             <p className="text-center text-xs text-on-surface-variant/70 italic mt-6">
                                 By confirming, you agree to our terms of clinical sanctuary care.

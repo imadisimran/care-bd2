@@ -3,12 +3,14 @@
 import { postUserGoogle } from "@/actions/server/auth";
 import useAuth from "@/hooks/useAuth";
 import { showErrorAlert, showSuccessAlert } from "@/lib/alert";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 
 const SocialLogin = () => {
   const {googleSignIn}=useAuth()
   const router=useRouter()
+  const searchParams=useSearchParams()
+  const callbackUrl=searchParams.get("callbackUrl")
   const handleGoogleLogin = async() => {
     try{
       const result = await googleSignIn()
@@ -23,7 +25,7 @@ const SocialLogin = () => {
       const data=await postUserGoogle()
       if(data.success && response.ok){
         showSuccessAlert({title:"Login Successful",text:"Welcome back!"})
-        router.push("/")
+        router.push(callbackUrl || "/")
       }else{
         showErrorAlert({title:"Login Failed",text:data.message})
       }

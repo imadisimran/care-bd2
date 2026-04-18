@@ -44,6 +44,7 @@ export const createBooking = async (bookingData) => {
         email:tokens.decodedToken.email,
         userId:tokens.decodedToken.uid,
         createdAt:new Date(),
+        status:"pending"
     }
         const booking=await dbConnect(collections.Bookings).insertOne(newBooking)
         
@@ -51,6 +52,24 @@ export const createBooking = async (bookingData) => {
             success: booking.acknowledged,
             message: booking.acknowledged ? "Booking created successfully" : "Failed to create booking"
         }
+    }catch(error){
+        return {success:false,message:error.message}
+    }
+}
+
+export const getMyBookings=async()=>{
+    try{
+        const tokens=await getAuthStatus()
+        if(!tokens){
+            return {success:false,message:"You are not authorized to get bookings"}
+        }
+        const bookings=await dbConnect(collections.Bookings).find({email:tokens.decodedToken.email}).toArray()
+        return {success:true,message:"Bookings fetched successfully",data:bookings.map(b=>{
+            return {
+                ...b,
+                _id:b._id.toString()
+            }
+        })}
     }catch(error){
         return {success:false,message:error.message}
     }

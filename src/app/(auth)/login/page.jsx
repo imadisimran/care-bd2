@@ -6,9 +6,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import SocialLogin from "@/components/button/SocialLogin";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const searchParams=useSearchParams()
+  const callbackUrl=searchParams.get("callbackUrl")
+  const router=useRouter()
   const {
     register,
     handleSubmit,
@@ -29,6 +34,7 @@ export default function LoginPage() {
       });
       if(response.ok){
         showSuccessAlert({title:"Login Successful",text:"Welcome back!"})
+        router.push(callbackUrl || "/")
       }
     }catch(error){
       console.log(error)
@@ -192,7 +198,7 @@ export default function LoginPage() {
             <p className="text-sm text-on-surface-variant font-medium">
               New to Songjog Care?{" "}
               <Link
-                href="/register"
+                href={`/register?callbackUrl=${callbackUrl}`}
                 className="text-primary-container font-bold hover:underline decoration-2 underline-offset-4 ml-1"
               >
                 Create Account

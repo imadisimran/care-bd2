@@ -5,7 +5,7 @@ import { postUser } from "@/actions/server/auth";
 
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { showErrorAlert, showSuccessAlert } from "@/lib/alert";
@@ -15,6 +15,8 @@ import SocialLogin from "@/components/button/SocialLogin";
 export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const searchParams=useSearchParams()
+  const callbackUrl=searchParams.get("callbackUrl")
   const {
     register,
     handleSubmit,
@@ -50,10 +52,10 @@ export default function RegisterPage() {
       
       if(response.ok && postUserResult.success){
         router.refresh()
-        router.push("/")
+        router.push(callbackUrl || "/")
       }
 
-      console.log(result)
+      // console.log(result)
 
       await showSuccessAlert({
         title: "Welcome! 🎉",
@@ -325,7 +327,7 @@ export default function RegisterPage() {
             <p className="text-sm text-on-surface-variant font-medium">
               Already have an account?{" "}
               <Link
-                href="/login"
+                href={`/login?callbackUrl=${callbackUrl}`}
                 className="text-primary-container font-bold hover:underline decoration-2 underline-offset-4 ml-1"
               >
                 Sign In

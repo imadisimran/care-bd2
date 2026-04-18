@@ -46,7 +46,7 @@ export async function proxy(request) {
         return NextResponse.next();
       }
       // Redirect unauthenticated users away from protected routes
-      return NextResponse.redirect(new URL('/login', request.url));
+      return NextResponse.redirect(new URL(`/login?callbackUrl=${request.nextUrl.pathname}`, request.url));
     },
     handleError: async (error) => {
       console.error('Unhandled authentication error', { error });
@@ -65,6 +65,8 @@ export const config = {
   matcher: [
     "/login",
     "/register",
+    "/booking/:path*",
+    "/my-bookings/:path*",
     '/api/login', 
     '/api/logout'
   ],
