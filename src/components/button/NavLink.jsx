@@ -12,8 +12,8 @@ export default function NavLink({ href, children }) {
             href={href} 
             className={`font-['Manrope'] tracking-tight leading-relaxed text-sm uppercase transition-all duration-300 hover:text-primary hover:scale-105 ${
                 isActive 
-                    ? "font-bold text-primary border-b-2 border-tertiary" 
-                    : "font-medium text-on-background/70"
+                    ? "font-bold text-primary border-b-2 border-accent" 
+                    : "font-medium text-base-content/70"
             }`}
         >
             {children}

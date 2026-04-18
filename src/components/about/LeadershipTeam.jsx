@@ -15,7 +15,7 @@ export default function LeadershipTeam() {
   return (
     <section className="space-y-16">
       <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-primary-container tracking-tight">Our Leadership Team</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-primary tracking-tight">Our Leadership Team</h2>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {leaders.map((leader, i) => (
@@ -24,7 +24,7 @@ export default function LeadershipTeam() {
               <Image alt={leader.name} className="object-cover" src={`https://lh3.googleusercontent.com/aida-public/${leader.img}`} fill sizes="96px"/>
             </div>
             <h4 className="font-bold text-primary">{leader.name}</h4>
-            <p className="text-xs text-on-surface/60 font-medium">{leader.role}</p>
+            <p className="text-xs text-base-content/60 font-medium">{leader.role}</p>
           </div>
         ))}
       </div>

@@ -6,26 +6,26 @@ export default function AvailableCourses() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6">
         <div>
           <h2 className="text-3xl font-bold text-primary mb-2">Available Courses (2)</h2>
-          <p className="text-on-surface-variant">Choose from our comprehensive selection of professional training programs</p>
+          <p className="text-neutral">Choose from our comprehensive selection of professional training programs</p>
         </div>
-        <div className="bg-surface-container-lowest p-6 rounded-xl whisper-shadow border border-surface-container w-full md:w-auto">
+        <div className="bg-base-100 p-6 rounded-xl whisper-shadow border border-base-200 w-full md:w-auto">
           <div className="text-sm font-bold text-primary mb-4">Filter Courses</div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Course Type</label>
-              <select className="w-full bg-surface-container-low border-none rounded-lg text-sm focus:ring-primary/20 outline-none p-2">
+              <label className="block text-xs font-semibold text-neutral uppercase tracking-wider mb-2">Course Type</label>
+              <select className="w-full bg-base-100 border-none rounded-lg text-sm focus:ring-primary/20 outline-none p-2">
                 <option>All</option>
               </select>
             </div>
             <div>
-              <label className="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Format</label>
-              <select className="w-full bg-surface-container-low border-none rounded-lg text-sm focus:ring-primary/20 outline-none p-2">
+              <label className="block text-xs font-semibold text-neutral uppercase tracking-wider mb-2">Format</label>
+              <select className="w-full bg-base-100 border-none rounded-lg text-sm focus:ring-primary/20 outline-none p-2">
                 <option>All</option>
               </select>
             </div>
             <div>
-              <label className="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Level</label>
-              <select className="w-full bg-surface-container-low border-none rounded-lg text-sm focus:ring-primary/20 outline-none p-2">
+              <label className="block text-xs font-semibold text-neutral uppercase tracking-wider mb-2">Level</label>
+              <select className="w-full bg-base-100 border-none rounded-lg text-sm focus:ring-primary/20 outline-none p-2">
                 <option>All</option>
               </select>
             </div>
@@ -48,7 +48,7 @@ export default function AvailableCourses() {
           </div>
           <div className="p-6">
             <h3 className="text-xl font-bold text-primary mb-4">General Caregiving</h3>
-            <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-on-surface-variant font-medium">
+            <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-neutral font-medium">
               <div className="flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-base opacity-70">schedule</span>
                 <span>11h</span>
@@ -62,17 +62,17 @@ export default function AvailableCourses() {
                 <span>10000</span>
               </div>
             </div>
-            <p className="text-sm text-on-surface-variant mb-6 leading-relaxed line-clamp-3">Master the foundational knowledge and skills for a professional caregiving career with this comprehensive course, fully aligned with NSDA.</p>
-            <div className="bg-tertiary-container/5 rounded-xl p-4 mb-6 border border-tertiary-container/10">
-              <div className="text-[10px] font-bold uppercase text-on-surface-variant mb-1">Instructor:</div>
+            <p className="text-sm text-neutral mb-6 leading-relaxed line-clamp-3">Master the foundational knowledge and skills for a professional caregiving career with this comprehensive course, fully aligned with NSDA.</p>
+            <div className="bg-accent/5 rounded-xl p-4 mb-6 border border-accent/10">
+              <div className="text-[10px] font-bold uppercase text-neutral mb-1">Instructor:</div>
               <div className="font-bold text-primary">Dr. Khairun Naher</div>
             </div>
             <div className="flex gap-3">
-              <button className="flex-grow py-3 bg-sage text-white rounded-lg font-bold text-sm hover:brightness-95 transition-all flex items-center justify-center gap-2">
+              <button className="flex-grow py-3 bg-success text-white rounded-lg font-bold text-sm hover:brightness-95 transition-all flex items-center justify-center gap-2">
                 <span className="material-symbols-outlined text-lg">menu_book</span>
                 Sign In to Enroll
               </button>
-              <button className="px-6 py-3 border border-outline-variant text-on-surface rounded-lg font-bold text-sm hover:bg-surface-container transition-all">Details</button>
+              <button className="px-6 py-3 border border-base-300 text-base-content rounded-lg font-bold text-sm hover:bg-base-200 transition-all">Details</button>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function AvailableCourses() {
           </div>
           <div className="p-6">
             <h3 className="text-xl font-bold text-primary mb-4">Hatekolome Caregiving</h3>
-            <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-on-surface-variant font-medium">
+            <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-neutral font-medium">
               <div className="flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-base opacity-70">schedule</span>
                 <span>2h</span>
@@ -101,17 +101,17 @@ export default function AvailableCourses() {
                 <span>127 enrolled</span>
               </div>
             </div>
-            <p className="text-sm text-on-surface-variant mb-6 leading-relaxed line-clamp-3">Build your career in this promising field by gaining basic caregiving skills through our hands-on caregiving course.</p>
-            <div className="bg-tertiary-container/5 rounded-xl p-4 mb-6 border border-tertiary-container/10">
-              <div className="text-[10px] font-bold uppercase text-on-surface-variant mb-1">Instructor:</div>
+            <p className="text-sm text-neutral mb-6 leading-relaxed line-clamp-3">Build your career in this promising field by gaining basic caregiving skills through our hands-on caregiving course.</p>
+            <div className="bg-accent/5 rounded-xl p-4 mb-6 border border-accent/10">
+              <div className="text-[10px] font-bold uppercase text-neutral mb-1">Instructor:</div>
               <div className="font-bold text-primary">Dr. Khairun Naher</div>
             </div>
             <div className="flex gap-3">
-              <button className="flex-grow py-3 bg-sage text-white rounded-lg font-bold text-sm hover:brightness-95 transition-all flex items-center justify-center gap-2">
+              <button className="flex-grow py-3 bg-success text-white rounded-lg font-bold text-sm hover:brightness-95 transition-all flex items-center justify-center gap-2">
                 <span className="material-symbols-outlined text-lg">menu_book</span>
                 Sign In to Enroll
               </button>
-              <button className="px-6 py-3 border border-outline-variant text-on-surface rounded-lg font-bold text-sm hover:bg-surface-container transition-all">Details</button>
+              <button className="px-6 py-3 border border-base-300 text-base-content rounded-lg font-bold text-sm hover:bg-base-200 transition-all">Details</button>
             </div>
           </div>
         </div>

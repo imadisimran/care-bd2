@@ -18,11 +18,11 @@ export default function ServiceFAQ({ faqs = [] }) {
           return (
             <div
               key={i}
-              className="bg-surface-container-low rounded-lg overflow-hidden transition-all"
+              className="bg-base-100 rounded-lg overflow-hidden transition-all"
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? null : i)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-high transition-colors"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-base-200 transition-colors"
                 aria-expanded={isOpen}
               >
                 <span className="font-bold text-primary text-lg">{faq.q}</span>
@@ -40,7 +40,7 @@ export default function ServiceFAQ({ faqs = [] }) {
                   isOpen ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-on-surface-variant leading-relaxed">{faq.a}</p>
+                <p className="text-neutral leading-relaxed">{faq.a}</p>
               </div>
             </div>
           );

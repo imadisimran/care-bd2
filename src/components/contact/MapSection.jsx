@@ -14,7 +14,7 @@ export default function MapSection() {
         <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500"></div>
         <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-lg max-w-sm">
           <h4 className="text-primary font-bold mb-2">Visit Our Center</h4>
-          <p className="text-on-surface-variant text-sm mb-4">Our administrative headquarters is open Mon-Fri, 8 AM to 6 PM for in-person consultations.</p>
+          <p className="text-neutral text-sm mb-4">Our administrative headquarters is open Mon-Fri, 8 AM to 6 PM for in-person consultations.</p>
           <button className="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all">
             Get Directions <span className="material-symbols-outlined">arrow_forward</span>
           </button>

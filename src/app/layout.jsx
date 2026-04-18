@@ -1,9 +1,6 @@
 import { Manrope, Geist } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 import AuthProvider from "@/provider/AuthProvider";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -18,11 +15,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={cn("antialiased", manrope.variable, "font-sans", geist.variable)}>
+    <html data-theme="carebd" lang="en" className={`antialiased ${manrope.variable}`}>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
-      <body className="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container min-h-screen">
+      <body className="bg-base-100 text-base-content font-body selection:bg-info selection:text-info-content min-h-screen">
         <AuthProvider>
           {children}
         </AuthProvider>

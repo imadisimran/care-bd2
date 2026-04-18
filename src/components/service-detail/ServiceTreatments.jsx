@@ -20,15 +20,15 @@ export default function ServiceTreatments({ treatments = [] }) {
         {treatments.map((t, i) => (
           <div
             key={i}
-            className="group p-10 rounded-xl bg-surface-container-highest hover:bg-primary transition-all duration-500"
+            className="group p-10 rounded-xl bg-base-300 hover:bg-primary transition-all duration-500"
           >
-            <span className="material-symbols-outlined text-4xl text-primary group-hover:text-primary-fixed mb-6 block">
+            <span className="material-symbols-outlined text-4xl text-primary group-hover:text-primary mb-6 block">
               {t.icon}
             </span>
-            <h3 className="text-2xl font-bold text-primary group-hover:text-surface mb-4">
+            <h3 className="text-2xl font-bold text-primary group-hover:text-base-100 mb-4">
               {t.title}
             </h3>
-            <p className="text-on-surface-variant group-hover:text-surface-container leading-relaxed">
+            <p className="text-neutral group-hover:text-base-200 leading-relaxed">
               {t.desc}
             </p>
           </div>

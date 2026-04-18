@@ -13,7 +13,7 @@ export default function ServiceHero({ title, desc, image }) {
     <>
       {/* Breadcrumb + Heading */}
       <section className="text-center mb-16 max-w-4xl mx-auto">
-        <nav className="mb-8 flex items-center justify-center gap-2 text-on-surface-variant font-label text-sm tracking-wider uppercase">
+        <nav className="mb-8 flex items-center justify-center gap-2 text-neutral font-label text-sm tracking-wider uppercase">
           <Link href="/services" className="hover:text-primary transition-colors">
             Services
           </Link>
@@ -24,7 +24,7 @@ export default function ServiceHero({ title, desc, image }) {
         <h1 className="text-5xl lg:text-7xl font-bold text-primary mb-8 tracking-tight leading-[1.1]">
           {title}
         </h1>
-        <p className="text-xl text-on-surface-variant leading-relaxed mx-auto">
+        <p className="text-xl text-neutral leading-relaxed mx-auto">
           {desc}
         </p>
       </section>

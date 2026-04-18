@@ -29,7 +29,7 @@ export default async function MyBookingsPage() {
                 <h1 className="text-5xl font-extrabold text-primary tracking-tight leading-none">
                     My Bookings
                 </h1>
-                <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                <p className="text-lg text-neutral max-w-xl leading-relaxed">
                     A complete overview of all your scheduled care services with Care BD.
                 </p>
 
@@ -40,7 +40,7 @@ export default async function MyBookingsPage() {
                             <CalendarDays className="w-3.5 h-3.5" />
                             {bookings.length} {bookings.length === 1 ? "Booking" : "Bookings"}
                         </span>
-                        <span className="inline-flex items-center gap-1.5 bg-tertiary-container/30 text-tertiary text-xs font-bold px-3 py-1.5 rounded-full">
+                        <span className="inline-flex items-center gap-1.5 bg-accent/30 text-accent text-xs font-bold px-3 py-1.5 rounded-full">
                             <BadgeDollarSign className="w-3.5 h-3.5" />
                             ৳ {totalSpent.toLocaleString()} Total Spent
                         </span>
@@ -51,21 +51,21 @@ export default async function MyBookingsPage() {
             {/* Content */}
             {bookings.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-32 text-center space-y-6">
-                    <div className="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center shadow-inner">
+                    <div className="w-24 h-24 rounded-full bg-base-200 flex items-center justify-center shadow-inner">
                         <PackageOpen className="w-10 h-10 text-primary/30" />
                     </div>
                     <div className="space-y-2">
                         <h2 className="text-2xl font-extrabold text-primary tracking-tight">
                             No Bookings Yet
                         </h2>
-                        <p className="text-on-surface-variant max-w-sm">
+                        <p className="text-neutral max-w-sm">
                             You haven&apos;t booked any care services yet. Explore our services and
                             schedule your first session today.
                         </p>
                     </div>
                     <Link
                         href="/services"
-                        className="flex items-center gap-2 bg-tertiary-container text-on-tertiary-container font-bold px-8 py-4 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg shadow-tertiary-container/20"
+                        className="flex items-center gap-2 bg-accent text-accent-content font-bold px-8 py-4 rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg shadow-accent/20"
                     >
                         Explore Services <ArrowRight className="w-4 h-4" />
                     </Link>

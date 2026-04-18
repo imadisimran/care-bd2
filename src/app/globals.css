@@ -1,69 +1,57 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
-@custom-variant dark (&:is(.dark *));
 @plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "carebd";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
 
-@theme {
-  --spacing-section: 6rem;
-  --color-surface-container-low: #f5f3ee;
-  --color-secondary-fixed: #e6deff;
-  --color-surface-tint: #63568b;
-  --color-on-secondary: #ffffff;
-  --color-on-primary-fixed-variant: #4b3f72;
-  --color-on-tertiary-container: #99bea0;
-  --color-surface-variant: #e4e2dd;
-  --color-on-surface: #1b1c19;
-  --color-on-tertiary: #ffffff;
-  --color-on-surface-variant: #48454f;
-  --color-on-error: #ffffff;
-  --color-surface-dim: #dbdad5;
-  --color-secondary-container: #a898fd;
-  --color-background: #fbf9f4;
-  --color-tertiary-container: #2c4e37;
-  --color-surface-bright: #fbf9f4;
-  --color-primary-fixed-dim: #cdbefa;
-  --color-on-tertiary-fixed: #00210e;
-  --color-primary-fixed: #e8deff;
-  --color-on-secondary-fixed-variant: #483795;
-  --color-inverse-on-surface: #f2f1ec;
-  --color-error-container: #ffdad6;
-  --color-surface-container-lowest: #ffffff;
-  --color-on-tertiary-fixed-variant: #2c4e36;
-  --color-secondary: #6050af;
-  --color-surface-container: #f0eee9;
-  --color-primary: #34285a;
-  --color-on-background: #1b1c19;
-  --color-surface: #fbf9f4;
-  --color-tertiary-fixed-dim: #aad0b1;
-  --color-tertiary: #153721;
-  --color-on-primary-container: #bbade8;
-  --color-inverse-primary: #cdbefa;
-  --color-tertiary-fixed: #c5eccc;
-  --color-on-secondary-container: #3c2a89;
-  --color-error: #ba1a1a;
-  --color-outline-variant: #cac4d0;
-  --color-outline: #797580;
-  --color-secondary-fixed-dim: #c9beff;
-  --color-surface-container-high: #eae8e3;
-  --color-primary-container: #4b3f72;
-  --color-on-error-container: #93000a;
-  --color-on-secondary-fixed: #1b0062;
-  --color-on-primary: #ffffff;
-  --color-surface-container-highest: #e4e2dd;
-  --color-sage: #84A98C;
-  --color-amber: #fcc434;
-  --color-error-dark: #8B0000;
+  /* Base Colors (Background & Surfaces) */
+  --color-base-100: #fbf9f4; /* from --color-background */
+  --color-base-200: #f0eee9; /* from --color-surface-container */
+  --color-base-300: #e4e2dd; /* from --color-surface-container-highest */
+  --color-base-content: #1b1c19; /* from --color-on-background */
 
-  --font-headline: var(--font-manrope);
-  --font-body: var(--font-manrope);
-  --font-label: var(--font-manrope);
+  /* Brand Colors */
+  --color-primary: #34285a; /* from --color-primary */
+  --color-primary-content: #ffffff; /* from --color-on-primary */
+  
+  --color-secondary: #6050af; /* from --color-secondary */
+  --color-secondary-content: #ffffff; /* from --color-on-secondary */
+  
+  --color-accent: #153721; /* mapped from --color-tertiary */
+  --color-accent-content: #ffffff; /* mapped from --color-on-tertiary */
 
-  --radius: 1rem;
-  --radius-lg: 2rem;
-  --radius-xl: 3rem;
-  --radius-full: 9999px;
+  /* Neutral Colors */
+  --color-neutral: #48454f; /* mapped from --color-on-surface-variant */
+  --color-neutral-content: #fbf9f4; /* mapped from --color-surface */
+
+  /* State Colors */
+  --color-info: #a898fd; /* mapped from --color-secondary-container */
+  --color-info-content: #3c2a89; /* mapped from --color-on-secondary-container */
+  
+  --color-success: #84A98C; /* mapped from --color-sage */
+  --color-success-content: #00210e; /* mapped from --color-on-tertiary-fixed */
+  
+  --color-warning: #fcc434; /* mapped from --color-amber */
+  --color-warning-content: #1b1c19; /* mapped from --color-on-background */
+  
+  --color-error: #ba1a1a; /* from --color-error */
+  --color-error-content: #ffffff; /* from --color-on-error */
+
+  /* Border Radius (Mapped from your --radius tokens) */
+  --radius-selector: 1rem;
+  --radius-field: 1rem; 
+  --radius-box: 1rem;
+
+  /* Base Sizes (DaisyUI Defaults) */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* Borders & Effects */
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }
 
 .material-symbols-outlined {
@@ -107,124 +95,12 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --color-foreground: var(--foreground);
-  --color-background: var(--background);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
-
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply outline-primary/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-base-100 text-base-content;
   }
   html {
     @apply font-sans;

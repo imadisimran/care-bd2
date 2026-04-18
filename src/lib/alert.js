@@ -2,8 +2,8 @@ import Swal from "sweetalert2";
 
 // Shared base config applied to all alerts on the site
 const baseConfig = {
-  background: "var(--color-background)",
-  color: "var(--color-on-background)",
+  background: "var(--color-base-100)",
+  color: "var(--color-base-content)",
   customClass: {
     popup: "swal-care-popup",
     title: "swal-care-title",
@@ -42,8 +42,8 @@ export const showSuccessAlert = ({ title, text, html, confirmButtonText = "OK" }
   return Swal.fire({
     ...baseConfig,
     icon: "success",
-    iconColor: "var(--color-tertiary)",
-    confirmButtonColor: "var(--color-tertiary-container)",
+    iconColor: "var(--color-accent)",
+    confirmButtonColor: "var(--color-accent)",
     title,
     text,
     html,

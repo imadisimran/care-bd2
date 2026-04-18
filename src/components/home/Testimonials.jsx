@@ -22,7 +22,7 @@ export default function Testimonials() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            What Our <span className="text-amber">Clients Say</span>
+            What Our <span className="text-warning">Clients Say</span>
           </h2>
           <p className="text-white/80 max-w-3xl mx-auto text-lg leading-relaxed">
             Real testimonials from families we’ve served and professionals we’ve trained.
@@ -33,7 +33,7 @@ export default function Testimonials() {
           {testimonials.map((testi, idx) => (
             <div key={idx} className="testimonial-glass p-8 rounded-[2rem] flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <div className="flex text-amber">
+                <div className="flex text-warning">
                   <span className="material-symbols-outlined">star</span>
                   <span className="material-symbols-outlined">star</span>
                   <span className="material-symbols-outlined">star</span>

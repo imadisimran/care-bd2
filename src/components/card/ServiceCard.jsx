@@ -10,7 +10,7 @@ export default function ServiceCard({ service }) {
 
   return (
     <div className="service-card-glass rounded-2xl overflow-hidden flex flex-col group hover:scale-[1.02] transition-all duration-500 h-full">
-      <div className="relative h-48 overflow-hidden bg-surface-container-low">
+      <div className="relative h-48 overflow-hidden bg-base-100">
         {image ? (
           <img
             src={imageUrl}
@@ -18,8 +18,8 @@ export default function ServiceCard({ service }) {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-tertiary-fixed/40">
-            <span className="material-symbols-outlined text-6xl text-sage/60">
+          <div className="w-full h-full flex items-center justify-center bg-success/40">
+            <span className="material-symbols-outlined text-6xl text-success/60">
               medical_services
             </span>
           </div>
@@ -34,7 +34,7 @@ export default function ServiceCard({ service }) {
                   ? "bg-primary"
                   : tag.type === "error"
                   ? "bg-error"
-                  : "bg-sage"
+                  : "bg-success"
               }`}
             >
               {tag.text}
@@ -47,11 +47,11 @@ export default function ServiceCard({ service }) {
         <h3 className="text-lg font-bold text-primary leading-tight">
           {title}
         </h3>
-        <p className="text-sm text-on-surface-variant/90 font-medium line-clamp-3">
+        <p className="text-sm text-neutral/90 font-medium line-clamp-3">
           {desc}
         </p>
         <div className="pt-4 flex gap-2 mt-auto">
-          <Link href={`/booking/${service._id}`} className="flex-1 bg-sage text-white py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-90 transition-all flex items-center justify-center gap-1">
+          <Link href={`/booking/${service._id}`} className="flex-1 bg-success text-white py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-90 transition-all flex items-center justify-center gap-1">
             <span className="material-symbols-outlined text-xs">
               calendar_today
             </span>{" "}
@@ -59,7 +59,7 @@ export default function ServiceCard({ service }) {
           </Link>
           <Link
             href={`/services/${service._id}`}
-            className="flex-1 border border-sage/30 text-sage py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-sage/10 transition-all flex items-center justify-center"
+            className="flex-1 border border-success/30 text-success py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-success/10 transition-all flex items-center justify-center"
           >
             Details
           </Link>

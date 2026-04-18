@@ -1,5 +1,6 @@
 import { Manrope } from "next/font/google";
 import "../globals.css";
+import { Suspense } from "react";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -14,8 +15,10 @@ export const metadata = {
 
 export default function AuthLayout({ children }) {
   return (
-    <div className="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container min-h-screen flex flex-col">
+   <Suspense fallback={<div>Loading...</div>}>
+     <div className="bg-base-100 text-base-content font-body selection:bg-info selection:text-info-content min-h-screen flex flex-col">
       {children}
     </div>
+   </Suspense>
   );
 }

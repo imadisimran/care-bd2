@@ -39,11 +39,11 @@ const SocialLogin = () => {
     <>
       {/* Divider */}
       <div className="relative flex items-center gap-4 my-2 pt-2">
-        <div className="flex-grow border-t border-outline-variant/20"></div>
+        <div className="flex-grow border-t border-base-300/20"></div>
         <span className="text-[10px] font-bold uppercase tracking-widest text-primary/40 whitespace-nowrap">
           Or Continue With
         </span>
-        <div className="flex-grow border-t border-outline-variant/20"></div>
+        <div className="flex-grow border-t border-base-300/20"></div>
       </div>
 
       {/* Google Login Button */}

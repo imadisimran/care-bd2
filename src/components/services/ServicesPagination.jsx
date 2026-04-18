@@ -35,7 +35,7 @@ export default function ServicesPagination({ totalServices, limit }) {
             className={`join-item btn btn-sm min-w-10 transition-all duration-300 ${
               currentPage === page 
                 ? "bg-primary text-white border-primary hover:bg-primary/90 shadow-md" 
-                : "bg-surface-container-low text-on-surface border-none hover:bg-primary hover:text-white"
+                : "bg-base-100 text-base-content border-none hover:bg-primary hover:text-white"
             }`}
           >
             {page}

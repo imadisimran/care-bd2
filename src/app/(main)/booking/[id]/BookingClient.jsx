@@ -64,7 +64,7 @@ export default function BookingPageClient({service,divisions}) {
                     <header className="space-y-4">
                         <span className="text-xs font-bold tracking-[0.1em] uppercase text-primary/60">Professional Support</span>
                         <h1 className="text-5xl font-extrabold text-primary tracking-tight leading-none">Book Your Care Sanctuary</h1>
-                        <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        <p className="text-lg text-neutral max-w-xl leading-relaxed">
                             Select your preferred duration and location. Our caregivers provide expert assistance tailored to your environment.
                         </p>
                     </header>
@@ -72,7 +72,7 @@ export default function BookingPageClient({service,divisions}) {
                     <section className="space-y-8">
                         {/* Duration Selection */}
                         <div className="space-y-6">
-                            <label className="text-sm font-bold uppercase tracking-wider text-on-surface/80 flex items-center gap-2">
+                            <label className="text-sm font-bold uppercase tracking-wider text-base-content/80 flex items-center gap-2">
                                 <Clock className="w-4 h-4" /> Selection of Duration
                             </label>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -81,19 +81,19 @@ export default function BookingPageClient({service,divisions}) {
                                         key={duration}
                                         className={`group relative flex items-center p-6 rounded-lg cursor-pointer transition-all border-2 ${
                                             selectedDuration === duration 
-                                            ? 'bg-surface-container-high border-primary' 
-                                            : 'bg-surface-container-low border-transparent hover:bg-surface-container-high'
+                                            ? 'bg-base-200 border-primary' 
+                                            : 'bg-base-100 border-transparent hover:bg-base-200'
                                         }`}
                                     >
                                         <input 
                                             type="radio" 
                                             name="duration" 
-                                            className="w-5 h-5 text-primary border-outline-variant focus:ring-primary focus:ring-offset-surface cursor-pointer"
+                                            className="w-5 h-5 text-primary border-base-300 focus:ring-primary focus:ring-offset-base-100 cursor-pointer"
                                             checked={selectedDuration === duration}
                                             onChange={() => setSelectedDuration(duration)}
                                         />
                                         <div className="ml-4">
-                                            <span className="block font-bold text-on-surface">{duration} {service.pricePer}</span>
+                                            <span className="block font-bold text-base-content">{duration} {service.pricePer}</span>
                                         </div>
                                     </label>
                                 ))}
@@ -102,14 +102,14 @@ export default function BookingPageClient({service,divisions}) {
 
                         {/* Location Details */}
                         <div className="space-y-6 pt-4">
-                            <label className="text-sm font-bold uppercase tracking-wider text-on-surface/80 flex items-center gap-2">
+                            <label className="text-sm font-bold uppercase tracking-wider text-base-content/80 flex items-center gap-2">
                                 <MapPin className="w-4 h-4" /> Location Details
                             </label>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <select 
                                     value={division} 
                                     onChange={handleDivisionChange} 
-                                    className="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all outline-none text-on-surface font-medium cursor-pointer"
+                                    className="w-full bg-base-100 border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all outline-none text-base-content font-medium cursor-pointer"
                                 >
                                     <option disabled={true}>Select A Division</option>
                                     {divisions.map((division,index)=>(
@@ -119,7 +119,7 @@ export default function BookingPageClient({service,divisions}) {
                                 <select 
                                     value={district} 
                                     onChange={handleDistrictChange} 
-                                    className="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all outline-none text-on-surface font-medium cursor-pointer"
+                                    className="w-full bg-base-100 border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all outline-none text-base-content font-medium cursor-pointer"
                                 >   
                                     {districts.length===0 && <option disabled={true}>Select A Division First</option>}
                                     {districts.length>0 && <option disabled={true}>Select A District</option>}
@@ -128,9 +128,9 @@ export default function BookingPageClient({service,divisions}) {
                                     ))}
                                 </select>
                                 <div className="md:col-span-2 space-y-2">
-                                    <label className="text-xs font-semibold text-on-surface-variant" htmlFor="address">Detailed Address</label>
+                                    <label className="text-xs font-semibold text-neutral" htmlFor="address">Detailed Address</label>
                                     <textarea 
-                                        className="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all outline-none" 
+                                        className="w-full bg-base-100 border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all outline-none" 
                                         id="address" 
                                         placeholder="House number, street name, landmarks..." 
                                         rows={4}
@@ -145,28 +145,28 @@ export default function BookingPageClient({service,divisions}) {
 
                 {/* Right Column: Summary Sidebar */}
                 <aside className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
-                    <div className="glass-panel p-8 rounded-xl shadow-[0_20px_50px_rgba(52,40,90,0.08)] border border-surface-container-highest/20 overflow-hidden relative">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-secondary-container/10 blur-3xl -mr-10 -mt-10"></div>
+                    <div className="glass-panel p-8 rounded-xl shadow-[0_20px_50px_rgba(52,40,90,0.08)] border border-base-300/20 overflow-hidden relative">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-info/10 blur-3xl -mr-10 -mt-10"></div>
                         <h2 className="text-2xl font-bold text-primary mb-8 relative">Booking Summary</h2>
                         <div className="space-y-6 mb-10 relative">
                             <div className="flex justify-between items-start">
                                 <div className="space-y-1">
                                     <span className="text-[10px] font-bold uppercase tracking-widest text-primary/40">Service Type</span>
-                                    <p className="font-bold text-on-surface text-sm">{serviceType.text}</p>
+                                    <p className="font-bold text-base-content text-sm">{serviceType.text}</p>
                                 </div>
                                 <Stethoscope className="text-primary/40 w-5 h-5" />
                             </div>
                             <div className="flex justify-between items-start">
                                 <div className="space-y-1">
                                     <span className="text-[10px] font-bold uppercase tracking-widest text-primary/40">Duration</span>
-                                    <p className="font-bold text-on-surface text-sm">{selectedDuration} {service.pricePer}</p>
+                                    <p className="font-bold text-base-content text-sm">{selectedDuration} {service.pricePer}</p>
                                 </div>
                                 <Timer className="text-primary/40 w-5 h-5" />
                             </div>
                             <div className="flex justify-between items-start">
                                 <div className="space-y-1">
                                     <span className="text-[10px] font-bold uppercase tracking-widest text-primary/40">Care Location</span>
-                                    <p className="font-bold text-on-surface text-sm">
+                                    <p className="font-bold text-base-content text-sm">
                                         {division && district ? `${district}, ${division}` : 'Not fully specified yet'}
                                     </p>
                                 </div>
@@ -174,22 +174,22 @@ export default function BookingPageClient({service,divisions}) {
                             </div>
                         </div>
                         
-                        <div className="pt-8 border-t border-surface-container-highest space-y-4">
+                        <div className="pt-8 border-t border-base-300 space-y-4">
                             <div className="flex justify-between items-end">
-                                <span className="text-sm font-semibold text-on-surface-variant">Total Cost</span>
+                                <span className="text-sm font-semibold text-neutral">Total Cost</span>
                                 <div className="text-right">
                                     <span className="text-4xl font-extrabold text-primary tracking-tight">৳ {selectedDuration * service.price}</span>
-                                    <p className="text-[10px] text-on-surface-variant mt-1 uppercase tracking-tighter">All inclusive of taxes</p>
+                                    <p className="text-[10px] text-neutral mt-1 uppercase tracking-tighter">All inclusive of taxes</p>
                                 </div>
                             </div>
                             <button 
                                 onClick={handleBooking} 
                                 disabled={loading || division === 'Select A Division' || district === 'Select A Division First' || district === 'Select A District' || !address.trim()}
-                                className="w-full bg-tertiary-container text-on-tertiary-container py-5 rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100 transition-all shadow-lg shadow-tertiary-container/20 mt-4 flex items-center justify-center gap-2 cursor-pointer"
+                                className="w-full bg-accent text-accent-content py-5 rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100 transition-all shadow-lg shadow-accent/20 mt-4 flex items-center justify-center gap-2 cursor-pointer"
                             >
                                 {loading ? (
                                     <div className="flex items-center gap-2">
-                                        <div className="w-5 h-5 border-2 border-on-tertiary-container border-t-transparent rounded-full animate-spin"></div>
+                                        <div className="w-5 h-5 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
                                         <span>Processing...</span>
                                     </div>
                                 ) : (
@@ -199,7 +199,7 @@ export default function BookingPageClient({service,divisions}) {
                                     </>
                                 )}
                             </button>
-                            <p className="text-center text-xs text-on-surface-variant/70 italic mt-6">
+                            <p className="text-center text-xs text-neutral/70 italic mt-6">
                                 By confirming, you agree to our terms of clinical sanctuary care.
                             </p>
                         </div>

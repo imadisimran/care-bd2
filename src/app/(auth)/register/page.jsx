@@ -60,7 +60,7 @@ export default function RegisterPage() {
       await showSuccessAlert({
         title: "Welcome! 🎉",
         html: `
-          <p style="color:var(--color-on-surface-variant);font-size:0.875rem;margin:0;">
+          <p style="color:var(--color-neutral);font-size:0.875rem;margin:0;">
             ${postUserResult.message}<br/>
             <strong style="color:var(--color-primary)">${data.name}</strong>, your journey of personalised care begins now.
           </p>
@@ -97,19 +97,19 @@ export default function RegisterPage() {
       </Link>
 
       {/* Abstract Shapes */}
-      <div className="absolute top-1/4 -left-12 w-64 h-64 bg-primary-container/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-12 w-96 h-96 bg-tertiary-container/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-12 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-md relative">
         {/* Secure Register Badge */}
-        <div className="absolute -top-12 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-surface-container-highest/50 backdrop-blur-md px-4 py-1.5 rounded-full border border-outline-variant/10 shadow-sm whitespace-nowrap">
+        <div className="absolute -top-12 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-base-300/50 backdrop-blur-md px-4 py-1.5 rounded-full border border-base-300/10 shadow-sm whitespace-nowrap">
           <span
-            className="material-symbols-outlined text-xs text-tertiary"
+            className="material-symbols-outlined text-xs text-accent"
             style={{ fontVariationSettings: "'FILL' 1", fontSize: "14px" }}
           >
             how_to_reg
           </span>
-          <span className="text-[10px] font-bold tracking-widest uppercase text-tertiary/80">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-accent/80">
             Secure Registration
           </span>
         </div>
@@ -120,7 +120,7 @@ export default function RegisterPage() {
             <h1 className="text-3xl font-extrabold text-primary tracking-tight mb-2">
               Join Us
             </h1>
-            <p className="text-on-surface-variant font-medium text-sm">
+            <p className="text-neutral font-medium text-sm">
               Begin your journey of personalized care today.
             </p>
           </div>
@@ -139,10 +139,10 @@ export default function RegisterPage() {
                     message: "Name must be at least 2 characters.",
                   },
                 })}
-                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                className={`w-full bg-base-100/40 border rounded-lg px-4 py-3.5 text-base-content placeholder:text-neutral focus:outline-none focus:ring-2 focus:bg-base-100 transition-all ${
                   errors.name
                     ? "border-error/60 focus:ring-error/20"
-                    : "border-outline-variant/20 focus:ring-primary/10"
+                    : "border-base-300/20 focus:ring-primary/10"
                 }`}
                 placeholder="John Doe"
                 type="text"
@@ -170,10 +170,10 @@ export default function RegisterPage() {
                     message: "Please enter a valid email address.",
                   },
                 })}
-                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                className={`w-full bg-base-100/40 border rounded-lg px-4 py-3.5 text-base-content placeholder:text-neutral focus:outline-none focus:ring-2 focus:bg-base-100 transition-all ${
                   errors.email
                     ? "border-error/60 focus:ring-error/20"
-                    : "border-outline-variant/20 focus:ring-primary/10"
+                    : "border-base-300/20 focus:ring-primary/10"
                 }`}
                 placeholder="name@example.com"
                 type="email"
@@ -201,10 +201,10 @@ export default function RegisterPage() {
                   //   message: "NID must be 10 or 17 digits.",
                   // },
                 })}
-                className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                className={`w-full bg-base-100/40 border rounded-lg px-4 py-3.5 text-base-content placeholder:text-neutral focus:outline-none focus:ring-2 focus:bg-base-100 transition-all ${
                   errors.nid
                     ? "border-error/60 focus:ring-error/20"
-                    : "border-outline-variant/20 focus:ring-primary/10"
+                    : "border-base-300/20 focus:ring-primary/10"
                 }`}
                 placeholder="1234567890"
                 type="text"
@@ -233,10 +233,10 @@ export default function RegisterPage() {
                       message: "Password must be at least 6 characters.",
                     },
                   })}
-                  className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 pr-12 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  className={`w-full bg-base-100/40 border rounded-lg px-4 py-3.5 pr-12 text-base-content placeholder:text-neutral focus:outline-none focus:ring-2 focus:bg-base-100 transition-all ${
                     errors.password
                       ? "border-error/60 focus:ring-error/20"
-                      : "border-outline-variant/20 focus:ring-primary/10"
+                      : "border-base-300/20 focus:ring-primary/10"
                   }`}
                   placeholder="••••••••"
                   type={showPassword ? "text" : "password"}
@@ -244,7 +244,7 @@ export default function RegisterPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-1"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-1"
                 >
                   <span className="material-symbols-outlined text-[20px]">
                     {showPassword ? "visibility_off" : "visibility"}
@@ -273,10 +273,10 @@ export default function RegisterPage() {
                     validate: (value) =>
                       value === password || "Passwords do not match.",
                   })}
-                  className={`w-full bg-surface-container-low/40 border rounded-lg px-4 py-3.5 pr-12 text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:bg-surface-container-lowest transition-all ${
+                  className={`w-full bg-base-100/40 border rounded-lg px-4 py-3.5 pr-12 text-base-content placeholder:text-neutral focus:outline-none focus:ring-2 focus:bg-base-100 transition-all ${
                     errors.confirmPassword
                       ? "border-error/60 focus:ring-error/20"
-                      : "border-outline-variant/20 focus:ring-primary/10"
+                      : "border-base-300/20 focus:ring-primary/10"
                   }`}
                   placeholder="••••••••"
                   type={showConfirmPassword ? "text" : "password"}
@@ -284,7 +284,7 @@ export default function RegisterPage() {
                 <button
                   type="button"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-1"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-1"
                 >
                   <span className="material-symbols-outlined text-[20px]">
                     {showConfirmPassword ? "visibility_off" : "visibility"}
@@ -302,7 +302,7 @@ export default function RegisterPage() {
             </div>
 
             <button
-              className="w-full bg-tertiary-container text-on-tertiary-container py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none disabled:scale-100 cursor-pointer"
+              className="w-full bg-accent text-accent-content py-4 rounded-full font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-all shadow-md mt-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none disabled:scale-100 cursor-pointer"
               type="submit"
               disabled={isSubmitting}
             >
@@ -323,12 +323,12 @@ export default function RegisterPage() {
 
           </form>
 
-          <div className="mt-10 pt-8 border-t border-outline-variant/10 text-center">
-            <p className="text-sm text-on-surface-variant font-medium">
+          <div className="mt-10 pt-8 border-t border-base-300/10 text-center">
+            <p className="text-sm text-neutral font-medium">
               Already have an account?{" "}
               <Link
                 href={`/login?callbackUrl=${callbackUrl}`}
-                className="text-primary-container font-bold hover:underline decoration-2 underline-offset-4 ml-1"
+                className="text-primary font-bold hover:underline decoration-2 underline-offset-4 ml-1"
               >
                 Sign In
               </Link>

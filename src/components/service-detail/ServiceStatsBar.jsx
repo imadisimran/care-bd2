@@ -3,8 +3,8 @@
  */
 export default function ServiceStatsBar({ features = [] }) {
   const colorClasses = [
-    { bg: "bg-primary", text: "text-on-primary" },
-    { bg: "bg-tertiary", text: "text-on-tertiary" },
+    { bg: "bg-primary", text: "text-primary-content" },
+    { bg: "bg-accent", text: "text-accent-content" },
   ];
 
   return (
@@ -14,7 +14,7 @@ export default function ServiceStatsBar({ features = [] }) {
         return (
           <div
             key={i}
-            className="bg-surface-container-low p-8 rounded-lg flex items-center gap-6"
+            className="bg-base-100 p-8 rounded-lg flex items-center gap-6"
           >
             <div
               className={`w-14 h-14 ${c.bg} rounded-full flex items-center justify-center ${c.text}`}
@@ -25,7 +25,7 @@ export default function ServiceStatsBar({ features = [] }) {
               <h3 className="text-primary font-bold text-xl leading-none mb-1">
                 {f.label}
               </h3>
-              <p className="text-on-surface-variant text-sm">{f.sub}</p>
+              <p className="text-neutral text-sm">{f.sub}</p>
             </div>
           </div>
         );
