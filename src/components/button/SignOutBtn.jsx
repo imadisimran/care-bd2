@@ -27,6 +27,7 @@ export default function SignOutBtn() {
         }
     }
   return (
-    <button onClick={handleSignOut} className="text-sm font-bold text-primary uppercase tracking-wider px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors cursor-pointer">Sign Out</button>
+    <button onClick={handleSignOut}>Log Out</button>
+    // className="text-sm font-bold text-primary uppercase tracking-wider px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors cursor-pointer"
   )
 }

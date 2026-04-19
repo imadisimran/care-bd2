@@ -4,6 +4,7 @@ import Image from "next/image";
 import SignOutBtn from "./button/SignOutBtn";
 import NavLink from "./button/NavLink";
 import useAuth from "@/hooks/useAuth";
+import Profile from "./Profile";
 
 
 export default function Navbar() {
@@ -34,14 +35,11 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="flex items-center gap-4 sm:gap-6">
-        <button className="material-symbols-outlined text-base-content hover:text-primary transition-colors p-2 md:p-0">
-          language
-        </button>
         <div className="hidden sm:flex items-center gap-4 min-w-[80px] justify-center">
           {loading ? (
             <div className="w-5 h-5 border-2 border-primary/30 border-t-primary rounded-full animate-spin"></div>
           ) : user ? (
-            <SignOutBtn />
+            <Profile></Profile>
           ) : (
             <Link
               href="/login"
