@@ -1,7 +1,7 @@
 export default function CourseHero() {
   return (
     <>
-      <header className="text-center mb-16 max-w-3xl mx-auto">
+      <div className="text-center mb-16 max-w-3xl mx-auto">
         <span className="text-sm uppercase tracking-[0.2em] text-secondary font-bold mb-4 block">
           Education Portal
         </span>
@@ -11,7 +11,7 @@ export default function CourseHero() {
         <p className="text-lg text-neutral leading-relaxed">
           Build your caregiving career with our NSDA-accredited training programs and gain the skills needed to make a real difference in people's lives.
         </p>
-      </header>
+      </div>
 
       <div className="relative max-w-2xl mx-auto mb-20 group">
         <div className="absolute inset-0 bg-primary/5 blur-3xl -z-10 rounded-full"></div>
